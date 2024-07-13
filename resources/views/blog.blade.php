@@ -130,31 +130,33 @@
         <div class="row">
             <!-- Main Content -->
             <div class="col-md-8">
-                @for ($i = 0; $i < 5; $i++)
+                @foreach ($blog as $blogs)
                     <div class="card mb-3">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="https://via.placeholder.com/150" class="card-img" alt="Post Image">
+                                <img src="{{ Storage::disk('s3')->url($blogs->image) }}" class="card-img"
+                                    alt="Post Image">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <p class="card-text"><small class="text-muted">Apr. 14th, 2022 • Business</small>
+                                    <p class="card-text"><small class="text-muted">{{ $blogs->date }} •
+                                            {{ $blogs->id_kategori }}</small>
                                     </p>
-                                    <h5 class="card-title">Thought you loved Python? Wait until you meet Rust</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-                                        nobis ea quis inventore vel voluptas.</p>
-                                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                                    <h5 class="card-title">{{ $blogs->judul }}</h5>
+                                    <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
+                                    <a href="{{ route('blog.detail', $blogs->slug) }}"
+                                        class="btn btn-outline-primary">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
             <!-- Sidebar -->
             <div class="col-md-4">
                 <!-- Search -->
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <h5 class="mb-3">Search</h5>
                     <form>
                         <div class="input-group">
@@ -164,20 +166,20 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> --}}
 
                 <!-- Popular Posts -->
                 <div class="mb-4">
                     <h5 class="mb-3">Popular Posts</h5>
                     <div class="list-group">
-                        @for ($i = 0; $i < 15; $i++)
+                        @foreach ($blog as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">There's a Cool New Way for Men to Wear Socks and Sandals</h6>
-                                    <small>March 15, 2018</small>
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
                                 </div>
                             </a>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
 
@@ -185,26 +187,12 @@
                 <div class="mb-4">
                     <h5 class="mb-3">Categories</h5>
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Websidn
-                            <span class="badge badge-primary badge-pill">10</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Website
-                            <span class="badge badge-primary badge-pill">5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Mobile
-                            <span class="badge badge-primary badge-pill">3</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            UI/UX
-                            <span class="badge badge-primary badge-pill">4</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Pemrograman
-                            <span class="badge badge-primary badge-pill">6</span>
-                        </li>
+                        @foreach ($blogkategori as $blogcat)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{ $blogcat->kategori }}
+                                <span class="badge badge-primary badge-pill">new</span>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -212,12 +200,9 @@
                 <div class="mb-4">
                     <h5 class="mb-3">Tags</h5>
                     <div class="d-flex flex-wrap">
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Travel</a>
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Adventure</a>
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Food</a>
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Lifestyle</a>
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Business</a>
-                        <a href="#" class="badge badge-secondary mr-2 mb-2">Freelancing</a>
+                        @foreach ($blogtags as $blogtag)
+                            <a href="#" class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>

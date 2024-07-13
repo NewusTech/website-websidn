@@ -76,8 +76,8 @@
     <!-- Navbar End -->
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
+    <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Our Happy</h6>
                 <h1 class="mb-5">Portofolio</h1>

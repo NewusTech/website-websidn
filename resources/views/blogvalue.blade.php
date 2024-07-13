@@ -45,14 +45,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
@@ -79,30 +72,92 @@
     </nav>
     <!-- Navbar End -->
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100 bg-image hover-zoom" style="border-radius: 15px;">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/bg.jpg" alt=""
-                            style="object-fit: cover;">
+
+    {{-- content --}}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>{{ $blogdetail->judul }}</h1>
+                            <p><small class="text-muted">{{ $blogdetail->date }} •
+                                    {{ $blogdetail->id_kategori }}</small></p>
+                            <img src="{{ Storage::disk('s3')->url($blogdetail->image) }}" class="img-fluid"
+                                alt="Post Image">
+                            <p>{!! $blogdetail->deskripsi !!}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-warning pe-3">Contact Us</h6>
-                    <h1 class="mb-4">Gratis Konsultasi</h1>
-                    <p class="mb-4">Kami siap melayani segala pertanyaan dengan cara menekan tombol hubungi kami atau
-                        kunjungi alamat kami.
-                    <p class="mb-4"><b>Bandar Lampung</b>
-                        Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung
-                        35212</p>
-                    <a class="btn btn-warning py-3 px-5 mt-2" href="https://wa.me/6287898644177">Hubungi Kami</a>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <!-- Search -->
+                {{-- <div class="mb-4">
+                    <h5 class="mb-3">Search</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Go</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> --}}
+
+                <!-- Popular Posts -->
+                <div class="mb-4">
+                    <h5 class="mb-3">Popular Posts</h5>
+                    <div class="list-group">
+                        @foreach ($blog as $blogs)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="mb-4">
+                    <h5 class="mb-3">Categories</h5>
+                    <ul class="list-group">
+                        @foreach ($blogkategori as $blogcat)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{ $blogcat->kategori }}
+                                <span class="badge badge-primary badge-pill">new</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="mb-4">
+                    <h5 class="mb-3">Tags</h5>
+                    <div class="d-flex flex-wrap">
+                        @foreach ($blogtags as $blogtag)
+                            <a href="#" class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
+    <div class="container-fluid px-5">
+        <h5 class="mb-3 text-black" style="border-bottom: 1px solid rgb(0, 0, 0);">Top Artikel</h5>
+        <div class="d-flex flex-wrap">
+            @foreach ($blogkategori as $blogcat)
+                <a href="#" class="">
+                    <div class="p-2 w-10 text-black d-inline">{{ $blogcat->kategori }}</div>
+                </a>
+            @endforeach
+        </div>
+    </div>
+
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -136,6 +191,7 @@
                     <h4 class="text-white mb-3">Maps</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-12">
+                            <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
@@ -143,6 +199,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Newsletter</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>

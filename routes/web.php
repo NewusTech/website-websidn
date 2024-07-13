@@ -35,6 +35,7 @@ route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
 route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
 route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
 route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
+Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

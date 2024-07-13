@@ -50,6 +50,7 @@ class FrontController extends Controller
         $testimoni = Testimonis::all()->take(3);
         $contact = Contacts::all();
         $blog = Blogs::all();
+        $blogkategori = Blogkategoris::all();
         return view('home', compact(
             'logo',
             'carousel', 
@@ -73,6 +74,7 @@ class FrontController extends Controller
             'header',
             'contact',
             'blog',
+            'blogkategori'
         ));
     }
     public function ServiceShow(Request $request)
@@ -122,8 +124,15 @@ class FrontController extends Controller
         public function BlogShow()
     
         {   
-            return view('blog');
-        }
+            $blog = Blogs::all();
+            $blogkategori = Blogkategoris::all();
+            $blogtags = Blogtags::all();
+            return view('blog', compact(
+                'blog',
+                'blogkategori',
+                'blogtags',
+            ));
+            }
         public function AboutShow()
     
         {   
@@ -142,5 +151,18 @@ class FrontController extends Controller
     
         {   
             return view('blogcontent');
+        }
+        public function BlogDetail($slug)
+        {
+            $blog = Blogs::all();
+            $blogkategori = Blogkategoris::all();
+            $blogtags = Blogtags::all();
+            $blogdetail = Blogs::where('slug', $slug)->firstOrFail();
+            return view('blogvalue', compact(
+                'blogdetail',
+                'blog',
+                'blogkategori',
+                'blogtags',
+            ));
         }
 }

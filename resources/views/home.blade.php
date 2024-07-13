@@ -97,7 +97,7 @@
             @endforeach
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                 <div class="container">
-                    <div class="row justify-content-start d-none d-sm-block">
+                    <div class="row justify-content-start d-sm-block">
                         <div class="col-sm-10 col-lg-8">
                             @foreach ($textheader as $teksheader)
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">
@@ -109,7 +109,6 @@
                                 </p>
                                 <a href="{{ route('contact') }}"
                                     class="btn btn-warning py-md-3 px-md-5 me-3 animated slideInLeft">Contact Us</a>
-                                {{-- <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> --}}
                             @endforeach
                         </div>
                     </div>
@@ -752,7 +751,7 @@
                                         <p class="card-text">
                                             <small class="text-muted">Admin - June 28, 2024</small>
                                         </p>
-                                        <a href="#" class="btn-sm btn-warning">Read More</a>
+                                        <a href="{{ route('blog') }}" class="btn-sm btn-warning">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -771,7 +770,7 @@
                                         <p class="card-text">
                                             <small class="text-muted">Admin - June 28, 2024</small>
                                         </p>
-                                        <a href="#" class="btn-sm btn-warning">Read More</a>
+                                        <a href="{{ route('blog') }}" class="btn-sm btn-warning">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -794,32 +793,27 @@
                             <p class="card-text">
                                 <small class="text-muted">{{ $blogs->date }}</small>
                             </p>
-                            <a href="#" class="btn-sm btn-warning">Read More</a>
+                            <a href="{{ route('blog.detail', $blogs->slug) }}" class="btn-sm btn-warning">Read
+                                More</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
         <h5 class="mb-3 text-white" style="border-bottom: 1px solid white;">Top Artikel</h5>
-        <div class="gap-3 d-lg-flex">
-            <div class="mb-4 text-white ">
-                <div class="">
-                    @for ($i = 0; $i < 3; $i++)
-                        <a href="#" class="">
-                            <div class="w-10 text-white d-inline">
-                                <h6 class="mb-1"> Jasa Website profesional dan murah di lampung
-                                </h6>
-                            </div>
-                        </a>
-                    @endfor
-                </div>
-            </div>
+        <div class="d-flex flex-wrap">
+            @foreach ($blogkategori as $blogcat)
+                <a href="#" class="">
+                    <div class="p-2 w-10 text-white d-inline">{{ $blogcat->kategori }}</div>
+                </a>
+            @endforeach
+        </div>
+        <div class="text-center mt-4 pb-4">
+            <a href="{{ route('blog') }}" class="btn btn-warning active " role="button" aria-pressed="true">See
+                More Articles</a>
         </div>
     </div>
-    <div class="text-center mt-4 pb-4">
-        <a href="{{ route('blog') }}" class="btn btn-warning active " role="button" aria-pressed="true">See
-            More Articles</a>
-    </div>
+
     </div>
     </div>
     <!-- Service End -->
@@ -856,17 +850,6 @@
                 <h1 class="mb-5">Pelanggan Kami Berkata!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-                {{-- <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet
-                            diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div> --}}
 
                 @foreach ($testimoni as $review)
                     <div class="testimonial-item text-center">
@@ -878,30 +861,10 @@
                             <p class="mb-0">{{ $review->description }}</p>
                         </div>
                     </div>
-                    {{-- <div class="testimonial-item text-center"> --}}
-                    {{-- <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ Storage::disk('s3')->url($review->image) }}" style="width: 80px; height: 80px;">
-                        <h5 class="mb-0">{{ $review->name }}</h5>
-                        <p>{{ $review->job }}</p>
-                        <div class="testimonial-text bg-light text-center p-4">
-                            <p class="mb-0">{{ $review->description }}</p>
-                        </div> --}}
-                    {{-- </div> --}}
                 @endforeach
             </div>
         </div>
     </div>
-    {{-- @foreach ($testimoni as $review)
-        <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ Storage::disk('s3')->url($review->image) }}"
-                style="width: 80px; height: 80px;">
-            <h5 class="mb-0">{{ $review->name }}</h5>
-            <p>{{ $review->job }}</p>
-            <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0">{{ $review->description }}</p>
-            </div>
-        </div>
-    @endforeach --}}
     <!-- Testimonial End -->
 
     {{-- faq start --}}
