@@ -29,10 +29,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    {{-- aos animated --}}
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
-
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -118,9 +114,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,
+                        Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i
@@ -145,8 +142,8 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-3">Question</h4>
+                    <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
@@ -160,9 +157,10 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Websidn
+                            Developer</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://themewagon.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
@@ -215,19 +213,28 @@
     <script>
         $(document).ready(function() {
             // Show all cards by default
-            var allCards = $('#tab-all .project-card');
+            $('#tab-all .project-card').show();
             $('#tab-basic, #tab-medium, #tab-custom').hide();
 
             // Filter function
-            $('.nav-pills a').click(function() {
+            $('.nav-pills a').click(function(e) {
+                e.preventDefault();
                 var target = $(this).attr('href');
                 if (target == '#tab-all') {
                     $('#tab-all').show();
-                    allCards.show();
+                    $('.project-card').show();
                     $('#tab-basic, #tab-medium, #tab-custom').hide();
                 } else {
-                    $('#tab-all').hide();
-                    $(target).show().siblings('.tab-pane').hide();
+                    $('.tab-pane').hide();
+                    $(target).show();
+                    var category = target.split('-')[1]; // Get the category from the target id
+                    $(target).find('.project-card').each(function() {
+                        if ($(this).data('category') == category) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
                 }
             });
         });

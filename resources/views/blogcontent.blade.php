@@ -57,7 +57,15 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img class="img-fluid" src="img/websidn.png" alt="" style="width: 50%; height: auto;">
+            {{-- <img class="img-fluid" src="img/websidn.png" alt="" style="width: 50%; height: auto;"> --}}
+            @foreach ($logo as $logos)
+                @if ($logos->images)
+                    <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image"
+                        style="height:100px; object-fit: cover; ">
+                @else
+                    Gambar tidak tersedia
+                @endif
+            @endforeach
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

@@ -124,13 +124,17 @@ class FrontController extends Controller
         public function BlogShow()
     
         {   
+            $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
             $blog = Blogs::all();
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
+            $blogabove = Blogs::all()->take(3);
             return view('blog', compact(
                 'blog',
+                'blogabove',
                 'blogkategori',
                 'blogtags',
+                'logo',
             ));
             }
         public function AboutShow()
@@ -154,15 +158,19 @@ class FrontController extends Controller
         }
         public function BlogDetail($slug)
         {
+            $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
             $blog = Blogs::all();
+            $blogabove = Blogs::all()->take(3);
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
             $blogdetail = Blogs::where('slug', $slug)->firstOrFail();
             return view('blogvalue', compact(
                 'blogdetail',
                 'blog',
+                'blogabove',
                 'blogkategori',
                 'blogtags',
+                'logo',
             ));
         }
 }

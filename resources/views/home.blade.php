@@ -29,10 +29,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    {{-- aos animated --}}
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
-
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -57,15 +53,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            {{-- <img class="img-fluid" src="img/websidn.png" alt="" style="width: 50%; height: auto;"> --}}
-            @foreach ($logo as $logos)
-                @if ($logos->images)
-                    <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image"
-                        style="height:100px; object-fit: cover; ">
-                @else
-                    Gambar tidak tersedia
-                @endif
-            @endforeach
+            <img class="img-fluid" src="img/websidn.png" alt="" style="width: 50%; height: auto;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
