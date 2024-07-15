@@ -500,22 +500,26 @@
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4 ">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Pay as You Go</h5>
+                                <h5>Basic</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$299</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp 300.000</h1>
+                                <h5 class="text-muted"><small>LANDING PAGE</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Subdomain
+                                    (nama.websidn.com)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>1 Halaman
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 1x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    pemula</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -523,22 +527,27 @@
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Standard Plan</h5>
+                                <h5>Medium</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$499</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp 500.000</h1>
+                                <h5 class="text-muted"><small>COMPANY PROFILE</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Domain
+                                    .com/tahun</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>6 Halaman +
+                                    1 Panel Admin
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 3x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    personal branding</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -546,22 +555,27 @@
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Premium Plan</h5>
+                                <h5>Custom</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$799</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>(Negotiate)</h1>
+                                <h5 class="text-muted"><small>PROFESIONAL</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Domain
+                                    .com/tahun</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Halaman
+                                    (sesuai permintaan)
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 3x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    bisnis menengah</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -578,19 +592,23 @@
                                 <h5>Pay as You Go</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$199</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.650.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Design 15
+                                    Feed (12 Feeds dan 3 Story)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Desain
+                                    Kreatif</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis Riset
+                                    Hastag</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -601,19 +619,24 @@
                                 <h5>Standard Plan</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$399</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.800.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>24 Design (18
+                                    Feed dan 6 Story)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Posting oleh
+                                    Admin</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Instagram
+                                    Ads
+                                </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -624,19 +647,24 @@
                                 <h5>Premium Plan</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$599</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.1.000.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>40 Design (27
+                                    Feed, 10 Story, 3 Reels)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Posting oleh
+                                    Admin</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Instagram
+                                    Ads
+                                </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
+                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -732,8 +760,12 @@
                                     style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 250px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5 class="card-title">Mal Pelayanan Publik</h5>
-                                        <p class="card-text">MPP ADALAH ADALAH ADALAH ADALAH...</p>
+                                        <h5 class="card-title">Website Terbaik dengan Bahasa Pemrograman</h5>
+                                        <p class="card-text">Website adalah sekumpulan halaman web yang saling terkait
+                                            dan dapat diakses melalui internet menggunakan sebuah alamat URL (Uniform
+                                            Resource Locator). Website biasanya berisi informasi yang dapat diakses oleh
+                                            pengguna untuk berbagai tujuan, seperti mencari informasi, berkomunikasi,
+                                            atau melakukan transaksi.</p>
                                     </div>
                                     <div>
                                         <p class="card-text">
@@ -751,8 +783,10 @@
                                     style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 250px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5 class="card-title">Mal Pelayanan Publik</h5>
-                                        <p class="card-text">MPP ADALAH ADALAH ADALAH ADALAH...</p>
+                                        <h5 class="card-title">Websidn Website Indonesia</h5>
+                                        <p class="card-text">Website Indonesia adalah penyedia layanan
+                                            pembuatan website profesional yang menawarkan solusi web murah dan
+                                            berkualitas di Indonesia.</p>
                                     </div>
                                     <div>
                                         <p class="card-text">
@@ -866,16 +900,16 @@
                     <h5 class="mb-0">
                         <button class="btn btn-link text-primary" data-toggle="collapse" data-target="#collapseOne"
                             aria-expanded="true" aria-controls="collapseOne"><i class="fas fa-question-circle"></i>
-                            Berapa biaya yang diperlukan untuk membuat website?
+                            Apa itu Websidn??
                         </button>
                     </h5>
                 </div>
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        Imajiner memberikan layanan pembuatan website secara custom yang disesuaikan dengan kebutuhan.
-                        Oleh karena itu, penawaran harga secara akurat baru dapat diketahui setelah proses konsultasi.
-                        Untuk melihat estimasi biaya, Anda dapat mengunjungi halaman Pricing.
+                        Websidn adalah Digital Agency Lampung yang berfokus pada strategi pemasaran yang dipadukan
+                        dengan kreativitas dengan tujuan untuk meningkatkan penjualan. Kami menyediakan beberapa jasa
+                        dengan harga yang terjangkau seperti jasa pembuatan website murah dan jasa kelola media sosial.
                     </div>
                 </div>
             </div>
@@ -885,13 +919,18 @@
                         <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
                             data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> <i
                                 class="fas fa-question-circle"></i>
-                            Apa saja yang perlu dipersiapkan untuk membuat website?
+                            Apa saja layanan yang ditawarkan oleh Websidn?
                         </button>
                     </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
-                        Isi jawaban untuk pertanyaan ini di sini.
+                        Kami menawarkan berbagai layanan, termasuk:
+                        1. Pembuatan Website (Bisnis dan Personal)
+                        2. Manajemen Media Sosial
+                        3. Optimasi SEO & SEM
+                        4. Meta Ads (Facebook, Instagram, dan TikTok)
+                        5. Konsultasi dan Pelatihan Digital
                     </div>
                 </div>
             </div>
@@ -901,17 +940,90 @@
                         <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i
                                 class="fas fa-question-circle"></i>
-                            Berapa lama waktu yang dibutuhkan untuk membuat website?
+                            Bagaimana jika ingin menggunakan jasa di Websidn?
                         </button>
                     </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                        Isi jawaban untuk pertanyaan ini di sini.
+                        Untuk memulai, Anda bisa menghubungi kami melalui form kontak di website kami atau langsung
+                        mengirimkan email ke websidn@gmail.com. Tim kami akan mengatur pertemuan untuk mendiskusikan
+                        kebutuhan dan tujuan Anda.
                     </div>
                 </div>
             </div>
             <!-- Tambahkan lebih banyak card untuk pertanyaan lainnya -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i
+                                class="fas fa-question-circle"></i>
+                            Berapa biaya yang diperlukan?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn memberikan layanan pembuatan website dan pengelolaan media sosial dengan harga yang
+                        sangat terjangkau. Untuk melihat estimasi biaya, Anda dapat mengunjungi halaman Harga.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><i
+                                class="fas fa-question-circle"></i>
+                            Mengapa harus menggunakan jasa Websidn?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <div class="card-body">
+                        Dengan menggunakan jasa dari Websidn, Anda dapat menghemat biaya karena tidak perlu mengeluarkan
+                        banyak uang untuk meng-hire designer, content writer, web developer, ataupun IT support untuk
+                        membuat website dan kelola media sosial impian Anda.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree"><i
+                                class="fas fa-question-circle"></i>
+                            Project apa saja yang sudah pernah ditangani oleh websidn?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn sudah melayani lebih dari 100 perusahaan dan bisnis untuk kebutuhan website profesional
+                        dan pengelolaan media sosial. Silakan kunjungi halaman Portfolio dan Gallery kami untuk melihat
+                        beberapa contoh project yang berhasil diselesaikan.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingSeven">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven"><i
+                                class="fas fa-question-circle"></i>
+                            Apakah Websidn berbadan hukum? Di mana lokasi kantornya?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn merupakan perusahaan berbadan hukum dengan nama CV. Newus Technology yang memiliki
+                        kantor fisik di Teluk Betung, Bandar Lampung. Apabila Anda ingin berdiskusi tatap muka, maka
+                        kami mempersilakan Anda untuk datang ke kantor kami yang terdaftar pada Google Map.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

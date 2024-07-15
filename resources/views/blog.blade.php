@@ -76,93 +76,89 @@
     <!-- Navbar End -->
 
     {{-- template --}}
-    <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="display-5 mb-3">Blog</h1>
-            </div>
-            <P class="text-dark text-center">Kumpulan informasi artikel dan blog</P>
-            <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
-                            data-toggle="pill" href="#tab-all">
-                            <span class="text-dark" style="width: 150px;">All News</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-basic">
-                            <span class="text-dark" style="width: 150px;">Website</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-medium">
-                            <span class="text-dark" style="width: 150px;">Mobile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">UI/UX</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">Pemrograman</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    {{-- content --}}
     <div class="container-fluid">
+        <h2 class="mb-4 text-center text-black pt-4">Blog</h2>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                <li class="nav-item p-2">
+                    <a class="nav-link active" data-toggle="pill" href="#all-news">All News</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#website">Website</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#mobile">Mobile</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#uiux">UI/UX</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#pemrograman">Pemrograman</a>
+                </li>
+            </ul>
+        </div>
+
         <div class="row">
-            <!-- Main Content -->
             <div class="col-md-8">
-                @foreach ($blog as $blogs)
-                    <div class="card mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="{{ Storage::disk('s3')->url($blogs->image) }}" class="card-img"
-                                    alt="Post Image">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <p class="card-text"><small class="text-muted">{{ $blogs->date }} •
-                                            {{ $blogs->id_kategori }}</small>
-                                    </p>
-                                    <h5 class="card-title">{{ $blogs->judul }}</h5>
-                                    <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
-                                    <a href="{{ route('blog.detail', $blogs->slug) }}"
-                                        class="btn btn-outline-primary">Read More</a>
+                <div class="tab-content">
+                    <div id="all-news" class="tab-pane fade show active">
+                        @foreach ($blog as $blogs)
+                            <div class="card mb-3" data-category="{{ $blogs->kategoris->kategori }}">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::disk('s3')->url($blogs->image) }}" class="card-img"
+                                            alt="Post Image">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <p class="card-text"><small class="text-muted">{{ $blogs->date }} •
+                                                    {{ $blogs->kategoris->kategori }}</small></p>
+                                            <h5 class="card-title">{{ $blogs->judul }}</h5>
+                                            <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
+                                            <a href="{{ route('blog.detail', $blogs->slug) }}"
+                                                class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                        <div class="d-flex justify-content-center">
+                            {{ $blog->links() }}
                         </div>
                     </div>
-                @endforeach
+
+                    @foreach (['website', 'mobile', 'uiux', 'pemrograman'] as $category)
+                        <div id="{{ $category }}" class="tab-pane fade">
+                            @foreach ($blog as $blogss)
+                                @if ($blogss->kategoris->kategori == $category)
+                                    <div class="card mb-3" data-category="{{ $blogss->kategoris->kategori }}">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="{{ Storage::disk('s3')->url($blogss->image) }}"
+                                                    class="card-img" alt="Post Image">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <p class="card-text"><small
+                                                            class="text-muted">{{ $blogss->date }} •
+                                                            {{ $blogss->kategoris->kategori }}</small></p>
+                                                    <h5 class="card-title">{{ $blogss->judul }}</h5>
+                                                    <p class="card-text">{{ $blogss->deskripsi_singkat }}</p>
+                                                    <a href="{{ route('blog.detail', $blogss->slug) }}"
+                                                        class="btn btn-outline-primary">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
             <!-- Sidebar -->
             <div class="col-md-4">
-                <!-- Search -->
-                {{-- <div class="mb-4">
-                    <h5 class="mb-3">Search</h5>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Go</button>
-                            </div>
-                        </div>
-                    </form>
-                </div> --}}
-
-                <!-- Popular Posts -->
                 <div class="mb-4">
                     <h5 class="mb-3">Popular Posts</h5>
                     <div class="list-group">
@@ -177,7 +173,6 @@
                     </div>
                 </div>
 
-                <!-- Categories -->
                 <div class="mb-4">
                     <h5 class="mb-3">Categories</h5>
                     <ul class="list-group">
@@ -190,12 +185,12 @@
                     </ul>
                 </div>
 
-                <!-- Tags -->
                 <div class="mb-4">
                     <h5 class="mb-3">Tags</h5>
                     <div class="d-flex flex-wrap">
                         @foreach ($blogtags as $blogtag)
-                            <a href="#" class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                            <a href="#" class="badge badge-secondary mr-2 mb-2 text-black"
+                                style="color:Tomato">{{ $blogtag->tags }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -203,31 +198,9 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="background-color:#f8f8f8;">
-        <h2 style="border-bottom: 1px solid rgb(0, 0, 0);">More Articles</h2>
-        <div class="row">
-            @foreach ($blogabove as $blogaboves)
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ Storage::disk('s3')->url($blogaboves->image) }}"
-                            alt="Metode SDLC dalam Pengembangan Software">
-                        <div class="card-body">
-                            <p class="card-text">
-                                <small class="text-muted">{{ $blogaboves->nama_penulis }} -
-                                    {{ $blogaboves->date }}</small>
-                            </p>
-                            <h5 class="card-title">{{ $blogaboves->judul }}</h5>
-                            <p class="card-text">{{ $blogaboves->deskripsi_singkat }}</p>
-                            <span class="badge badge-secondary">{{ $blogaboves->kategori }}</span>
-                            <a href="{{ route('blog') }}" class="btn-sm btn-warning">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
 
-        </div>
-    </div>
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -244,7 +217,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang
+                        Teba,
                         Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
@@ -342,24 +316,23 @@
 
     <script>
         $(document).ready(function() {
-            // Show all cards by default
-            $('#tab-all .project-card').show();
-            $('#tab-basic, #tab-medium, #tab-custom').hide();
+            $('.tab-pane').hide();
+            $('#all-news').show();
 
-            // Filter function
             $('.nav-pills a').click(function(e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
-                if (target == '#tab-all') {
-                    $('#tab-all').show();
-                    $('.project-card').show();
-                    $('#tab-basic, #tab-medium, #tab-custom').hide();
+
+                $('.tab-pane').hide();
+                $(target).show();
+
+                if (target == '#all-news') {
+                    $('.card').show();
                 } else {
-                    $('.tab-pane').hide();
-                    $(target).show();
-                    var category = target.split('-')[1]; // Get the category from the target id
-                    $(target).find('.project-card').each(function() {
-                        if ($(this).data('category') == category) {
+                    var selectedCategory = target.substring(1); // Mengambil nama kategori dari ID tab
+                    $('.card').each(function() {
+                        var cardCategory = $(this).data('category').toLowerCase();
+                        if (cardCategory === selectedCategory) {
                             $(this).show();
                         } else {
                             $(this).hide();
@@ -369,6 +342,9 @@
             });
         });
     </script>
+
+
+
     <script>
         function showCategory(category) {
             document.getElementById('website').style.display = (category === 'website') ? 'block' : 'none';

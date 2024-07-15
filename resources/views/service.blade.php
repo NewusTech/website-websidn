@@ -616,20 +616,21 @@
     </div>
     <!-- Service End -->
 
-    {{-- template --}}
+    {{-- brosur --}}
     <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
         <div class="container">
             <div class="text-center">
                 <small
                     class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest
                     Updates</small>
-                <h1 class="display-5 mb-3">Tersedia Tema kami</h1>
+                <h1 class="display-5 mb-3">Tersedia Brosur Catalog Produk Kami</h1>
                 <button class="btn btn-danger"><i class="fas fa-money-check-alt"></i>
                     Our Brosur </button>
             </div>
 
         </div>
     </div>
+    {{-- endbrosur --}}
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"

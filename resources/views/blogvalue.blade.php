@@ -9,7 +9,7 @@
     <meta name="description" content="Websidn menyediakan jasa pembuatan website murah dan profesional di Lampung.">
 
     <!-- Favicon -->
-    <link href="img/websidn.png" rel="icon">
+    <link href="img/websidn.png" rel="icon" type="image/x-icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,8 +88,8 @@
                 <a href="{{ route('blog') }}" class="nav-item nav-link">Blog</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
             </div>
-            <a href="{{ route('contact') }}" class="btn btn-warning py-4 px-lg-2 d-none d-lg-block">Contact Us<i
-                    class="fa fa-arrow-right ms-2"></i></a>
+            <a href="{{ route('contact') }}" class="btn btn-warning py-4 px-lg-2 d-none d-lg-block text-black">Contact
+                Us<i class="fa fa-arrow-right ms-2"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -99,10 +99,14 @@
         <div class="row">
             <!-- Blog Detail -->
             <div class="col-md-8">
-                <h1>{{ $blogdetail->judul }}</h1>
-                <p><small class="text-muted">{{ $blogdetail->date }} • {{ $blogdetail->id_kategori }}</small></p>
-                <img src="{{ Storage::disk('s3')->url($blogdetail->image) }}" class="img-fluid" alt="Post Image">
-                <p>{!! $blogdetail->deskripsi !!}</p>
+                <div class="border p-4 bg-light rounded shadow-sm">
+                    <h1 class="text-center">{{ $blogdetail->judul }}</h1>
+                    <p class="text-muted text-center"><small>{{ $blogdetail->date }} •
+                            {{ $blogdetail->id_kategori }}</small></p>
+                    <img src="{{ Storage::disk('s3')->url($blogdetail->image) }}"
+                        class="img-fluid rounded mx-auto d-block" alt="Post Image">
+                    <p class="mt-4">{!! $blogdetail->deskripsi !!}</p>
+                </div>
             </div>
 
             <!-- Sidebar -->
@@ -150,7 +154,8 @@
 
 
     <div class="container-fluid">
-        <h2 style="border-bottom: 1px solid rgb(0, 0, 0);">More Articles</h2>
+        <br>
+        <h2 style="border-bottom: 2px solid rgb(0, 0, 0);">More Articles</h2>
         <div class="row">
             @foreach ($blogabove as $blogaboves)
                 <div class="col-md-4">
@@ -178,14 +183,6 @@
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,

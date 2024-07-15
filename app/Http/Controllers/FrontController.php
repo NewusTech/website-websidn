@@ -83,7 +83,7 @@ class FrontController extends Controller
         $service = Cards::all()->where('kategori', 'Layanan')->take(4);
         $kategori = $request->query('kategori', 'Pegawai'); // Default 'Pegawai'
         $query = Cards::where('kategori', $kategori);
-        $alltema = $query->paginate(6); // Per page limit
+        $alltema = $query->paginate(9); // Per page limit
 
         $basic = Cards::all()->where('judul', 'Basic')->take(6);
         $medium = Cards::all()->where('judul', 'Medium')->take(6);
@@ -125,7 +125,7 @@ class FrontController extends Controller
     
         {   
             $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
-            $blog = Blogs::all();
+            $blog = Blogs::with(['kategoris'])->paginate(3);
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
             $blogabove = Blogs::all()->take(3);
