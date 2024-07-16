@@ -116,8 +116,8 @@
             <div class="row g-4">
                 @foreach ($service as $layanan)
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item text-center pt-3">
-                            <div class="p-4">
+                        <div class="service-item text-center">
+                            <div class="p-0">
                                 <img class="img-fluid" src="{{ Storage::disk('s3')->url($layanan->image) }}"
                                     alt="">
                                 <h5 class="mb-3">{{ $layanan->judul }}</h5>
@@ -142,32 +142,65 @@
             <P class="text-dark text-center">Berbagai pilihan Template dapat anda temukan dan gunakan untuk website
                 bisnis anda.</P>
             <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
-                            data-toggle="pill" href="#tab-all">
-                            <span class="text-dark" style="width: 150px;">All Events</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-basic">
-                            <span class="text-dark" style="width: 150px;">Basic</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-medium">
-                            <span class="text-dark" style="width: 150px;">Medium</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">Custom</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="container-fluid">
+                    {{-- ketika mode desktop tampilkan ini dan hide di mode mobile --}}
+                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-none d-md-flex">
+                        <li class="nav-item p-2">
+                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
+                                data-toggle="pill" href="#tab-all">
+                                <span class="text-dark" style="width: 150px;">All Events</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-basic">
+                                <span class="text-dark" style="width: 150px;">Basic</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-medium">
+                                <span class="text-dark" style="width: 150px;">Medium</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-custom">
+                                <span class="text-dark" style="width: 150px;">Custom</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    {{-- ketika mode mobile tampilkan ini dan hide di mode desktop --}}
+                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-flex d-md-none">
+                        <li class="nav-item p-2">
+                            <a class="mx-1 py-1 border border-primary bg-light rounded-pill active" data-toggle="pill"
+                                href="#tab-all">
+                                <span class="text-dark" style="width: 150px;">All Events</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-basic">
+                                <span class="text-dark" style="width: 150px;">Basic</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-medium">
+                                <span class="text-dark" style="width: 150px;">Medium</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="mx-1 py-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-custom">
+                                <span class="text-dark" style="width: 150px;">Custom</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
                 <div class="tab-content">
                     <div id="tab-all" class="tab-pane fade show active p-0">
                         <div class="row g-4">
@@ -186,9 +219,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -218,9 +250,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="https://portal.websidn.com/" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -247,9 +278,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -276,9 +306,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
