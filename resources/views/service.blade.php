@@ -182,12 +182,11 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -217,9 +216,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -246,9 +244,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -275,9 +272,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -653,8 +649,8 @@
                     class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest
                     Updates</small>
                 <h1 class="display-5 mb-3">Tersedia Brosur Catalog Produk Kami</h1>
-                <button class="btn btn-danger"><i class="fas fa-money-check-alt"></i>
-                    Our Brosur </button>
+                <a href="https://drive.google.com/drive/folders/1xxAZEDpnAwcDy8lFLkbANgkLU3fmNFl8?usp=sharing"
+                    class="btn btn-danger text-white"><i class="fas fa-money-check-alt"></i> Our Brosur</a>
             </div>
 
         </div>

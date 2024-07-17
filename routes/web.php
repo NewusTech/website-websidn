@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\TextController;
 use App\Http\Controllers\Admin\CoroselController;
 use App\Http\Controllers\Admin\CardController;
+use App\Http\Controllers\Admin\CarthController;
 use App\Http\Controllers\Admin\TestimoniController;
 use App\Http\Controllers\Admin\PriceController;
 use App\Http\Controllers\Admin\GaleriController;
@@ -79,6 +80,14 @@ Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(
         Route::put('/card/{id}', [CardController::class, 'CardUpdate'])->name('card.update');
         Route::get('/card/{id}', [CardController::class, 'CardView'])->name('card.view');
         Route::delete('/card/{id}', [CardController::class, 'CardDelete'])->name('card.delete');
+
+        Route::get('/carth', [CarthController::class, 'CarthIndex'])->name('carth.index');
+        Route::get('/carth/create', [CarthController::class, 'CarthCreate'])->name('carth.create');
+        Route::post('/carth', [CarthController::class, 'CarthStore'])->name('carth.store');
+        Route::get('/carth/{id}/edit', [CarthController::class, 'CarthEdit'])->name('carth.edit');
+        Route::put('/carth/{id}', [CarthController::class, 'CarthUpdate'])->name('carth.update');
+        Route::get('/carth/{id}', [CarthController::class, 'CarthView'])->name('carth.view');
+        Route::delete('/carth/{id}', [CarthController::class, 'CarthDelete'])->name('carth.delete');
         
         // TestimoniController routes
         Route::get('/testimoni', [TestimoniController::class, 'TestimoniIndex'])->name('testimoni.index');

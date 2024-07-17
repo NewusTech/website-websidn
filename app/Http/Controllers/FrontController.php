@@ -8,6 +8,7 @@ use App\Models\Images;
 use App\Models\Corosels;
 use App\Models\Texts;
 use App\Models\Cards;
+use App\Models\Carths;
 use App\Models\Prices;
 use App\Models\Galeris;
 use App\Models\Testimonis;
@@ -33,13 +34,11 @@ class FrontController extends Controller
         $price = Prices::all()->take(4);
         $gallery = Galeris::with(['images','texts'])->take(4)->get();
 
-        $kategori = $request->query('kategori', 'Pegawai'); // Default 'Pegawai'
-        $query = Cards::where('kategori', $kategori);
-        $alltema = $query->paginate(6); // Per page limit
+        $alltema = Carths::paginate(6); // Per page limit
 
-        $basic = Cards::all()->where('judul', 'Basic')->take(6);
-        $medium = Cards::all()->where('judul', 'Medium')->take(6);
-        $custom = Cards::all()->where('judul', 'Custom')->take(6);
+        $basic = Carths::all()->where('kategori', 'basic')->take(6);
+        $medium = Carths::all()->where('kategori', 'medium')->take(6);
+        $custom = Carths::all()->where('kategori', 'custom')->take(6);
 
         $porto = Cards::all()->where('kategori', 'Portofolio')->take(1);
         $portowebsite = Cards::all()->where('judul', 'Website')->take(4);
@@ -81,13 +80,11 @@ class FrontController extends Controller
     
         {   
         $service = Cards::all()->where('kategori', 'Layanan')->take(4);
-        $kategori = $request->query('kategori', 'Pegawai'); // Default 'Pegawai'
-        $query = Cards::where('kategori', $kategori);
-        $alltema = $query->paginate(9); // Per page limit
+        $alltema = Carths::paginate(6); // Per page limit
 
-        $basic = Cards::all()->where('judul', 'Basic')->take(6);
-        $medium = Cards::all()->where('judul', 'Medium')->take(6);
-        $custom = Cards::all()->where('judul', 'Custom')->take(6);
+        $basic = Carths::all()->where('kategori', 'basic')->take(6);
+        $medium = Carths::all()->where('kategori', 'medium')->take(6);
+        $custom = Carths::all()->where('kategori', 'custom')->take(6);
             return view('service', compact(
             'alltema',
             'basic',

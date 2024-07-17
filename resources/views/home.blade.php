@@ -176,25 +176,25 @@
                         <li class="nav-item p-2">
                             <a class="mx-1 py-1 border border-primary bg-light rounded-pill active" data-toggle="pill"
                                 href="#tab-all">
-                                <span class="text-dark" style="width: 150px;">All Events</span>
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">All Events</span>
                             </a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
                                 href="#tab-basic">
-                                <span class="text-dark" style="width: 150px;">Basic</span>
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Basic</span>
                             </a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
                                 href="#tab-medium">
-                                <span class="text-dark" style="width: 150px;">Medium</span>
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Medium</span>
                             </a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="mx-1 py-1 border border-primary bg-light rounded-pill" data-toggle="pill"
                                 href="#tab-custom">
-                                <span class="text-dark" style="width: 150px;">Custom</span>
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Custom</span>
                             </a>
                         </li>
                     </ul>
@@ -216,10 +216,10 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
@@ -247,10 +247,10 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <a href="https://portal.websidn.com/" class="btn btn-warning"
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
@@ -275,10 +275,10 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
@@ -303,10 +303,10 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <a href="{{ route('contact') }}" class="btn btn-warning"
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
@@ -324,6 +324,32 @@
         </div>
     </div>
     {{-- endtemplate --}}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9" style="height: 200px;">
+                    <video class="embed-responsive-item" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Video Penjelasan</h3>
+                <p>
+                    Menggunakan template website dari websidn.com sangat mudah dan cepat. Pertama, pilih dan unduh
+                    template yang diinginkan. Setelah itu, buka file template dan pindahkan ke folder proyek Anda.
+                    Selanjutnya, sesuaikan isi template dengan informasi dan gambar bisnis Anda. Dalam beberapa langkah
+                    sederhana, Anda akan memiliki website profesional yang siap digunakan.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <!-- Service Start -->
     <div class="container-fluid" style="background: #280F91;">
@@ -368,8 +394,8 @@
                                     pemula</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -396,8 +422,8 @@
                                     personal branding</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -424,8 +450,8 @@
                                     bisnis menengah</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -458,8 +484,8 @@
                                     Hastag</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -486,8 +512,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -514,8 +540,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -548,8 +574,8 @@
                                     pemula</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -576,8 +602,8 @@
                                     personal branding</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -604,8 +630,8 @@
                                     bisnis menengah</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -637,8 +663,8 @@
                                     Hastag</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -665,8 +691,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -693,8 +719,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

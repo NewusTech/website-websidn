@@ -94,8 +94,16 @@
     </nav>
     <!-- Navbar End -->
 
+
     <!-- Main Content -->
     <div class="container-fluid pt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $blogdetail->judul }}</li>
+            </ol>
+        </nav>
         <div class="row">
             <!-- Blog Detail -->
             <div class="col-md-8">
@@ -152,7 +160,6 @@
         </div>
     </div>
 
-
     <div class="container-fluid">
         <br>
         <h2 style="border-bottom: 2px solid rgb(0, 0, 0);">More Articles</h2>
@@ -161,7 +168,8 @@
                 <div class="col-md-4">
                     <div class="card">
                         <img class="card-img-top" src="{{ Storage::disk('s3')->url($blogaboves->image) }}"
-                            alt="Metode SDLC dalam Pengembangan Software">
+                            alt="Metode SDLC dalam Pengembangan Software"
+                            style="max-height: 150px; object-fit: cover;">
                         <div class="card-body">
                             <p class="card-text">
                                 <small class="text-muted">{{ $blogaboves->nama_penulis }} -
