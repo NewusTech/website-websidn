@@ -1,0 +1,23 @@
+name: CI CD Proccess Websidn
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      with:
+        php-version: '8.2'
+    - uses: actions/checkout@v4
+    - name: Deploy
+      run: |
+        cd /home/newus-websidn/htdocs/websidn.com
+        git checkout -f
+        git pull
+        php artisan migrate
+    - run : systemctl restart nginx
