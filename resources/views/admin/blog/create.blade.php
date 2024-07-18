@@ -84,13 +84,13 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
-    {{-- <script>
+    <script>
         document.getElementById('judul').addEventListener('input', function() {
             const judul = this.value.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
             document.getElementById('slug').value = judul;
         });
     </script>
+    {{-- 
     <script src="https://cdn.tiny.cloud/1/2c36jplygvhxqd0f2xatcwqncquv1qubi58fo72ooxs4jpzo/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script>

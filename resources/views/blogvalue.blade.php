@@ -99,8 +99,8 @@
     <div class="container-fluid pt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $blogdetail->judul }}</li>
             </ol>
         </nav>
@@ -119,18 +119,58 @@
 
             <!-- Sidebar -->
             <div class="col-md-4">
+
+                <!-- Berita Top -->
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Top</h5>
+                    <div class="list-group">
+                        @foreach ($blog as $blogs)
+                            <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
+
+
                 <!-- Popular Posts -->
                 <div class="mb-4">
                     <h5 class="mb-3">Popular Posts</h5>
                     <div class="list-group">
                         @foreach ($blog as $blogs)
-                            <a href="#" class="list-group-item list-group-item-action">
+                            <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h6 class="mb-1">{{ $blogs->judul }}</h6>
                                     <small>{{ $blogs->date }}</small>
                                 </div>
                             </a>
                         @endforeach
+                    </div>
+                </div>
+
+                <!-- Berita Terbaru -->
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Terbaru</h5>
+                    <div class="list-group">
+                        @foreach ($blog as $blogs)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+
                     </div>
                 </div>
 
@@ -149,10 +189,11 @@
 
                 <!-- Tags -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Tags</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Tags</h5>
                     <div class="d-flex flex-wrap">
                         @foreach ($blogtags as $blogtag)
-                            <a href="#" class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                            <a href="{{ route('blog') }}"
+                                class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
                         @endforeach
                     </div>
                 </div>

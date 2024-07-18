@@ -158,7 +158,27 @@
             </div>
 
             <!-- Sidebar -->
+
             <div class="col-md-4">
+
+                <!-- Berita Top -->
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Top</h5>
+                    <div class="list-group">
+                        @foreach ($blog as $blogs)
+                            <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
                 <div class="mb-4">
                     <h5 class="mb-3">Popular Posts</h5>
                     <div class="list-group">
@@ -170,6 +190,25 @@
                                 </div>
                             </a>
                         @endforeach
+                    </div>
+                </div>
+
+                <!-- Berita Terbaru -->
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Terbaru</h5>
+                    <div class="list-group">
+                        @foreach ($blog as $blogs)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+
                     </div>
                 </div>
 
