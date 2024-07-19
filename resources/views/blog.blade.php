@@ -197,7 +197,7 @@
                 <div class="mb-4">
                     <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Terbaru</h5>
                     <div class="list-group">
-                        @foreach ($blog->take(4) as $blogs)
+                        @foreach ($blog->sortByDesc('date')->take(4) as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                     <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
@@ -210,6 +210,7 @@
                         @endforeach
                     </div>
                 </div>
+
 
 
                 <div class="mb-4">
