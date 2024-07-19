@@ -122,7 +122,7 @@ class FrontController extends Controller
     
         {   
             $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
-            $blog = Blogs::with(['kategoris'])->paginate(6);
+            $blog = Blogs::with(['kategoris'])->paginate(8);
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
             $blogabove = Blogs::all()->take(3);

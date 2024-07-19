@@ -76,7 +76,7 @@
     <!-- Navbar End -->
 
     <!-- Categories Start -->
-    <div class="container-fluid p-4">
+    {{-- <div class="container-fluid p-4">
         <div class="container-fluid">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Our Happy</h6>
@@ -142,8 +142,158 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Categories Start -->
+
+    <!-- Service Start -->
+    <div class="container-fluid" style="background: #280F91;">
+        <div class="container-fluid">
+            <h2 class="mb-4 text-center text-warning pt-4">Portofolio</h2>
+            <div class="row justify-content-start">
+                <div class="col-12 mb-4">
+                    <div class="row">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="text-warning nav-link active" href="#" data-filter="all">All</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="website">Website</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="digital">Digital</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="uiux">UI/UX</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach ($portowebsite as $portofolioweb)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="website">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofolioweb->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofolioweb->judul }}</h5>
+                            <p class="card-text">{{ $portofolioweb->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofolioweb->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($portomobile as $portofoliomob)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="digital">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofoliomob->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofoliomob->judul }}</h5>
+                            <p class="card-text">{{ $portofoliomob->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofoliomob->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($portodigital as $portofoliodigi)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="digital">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofoliodigi->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofoliodigi->judul }}</h5>
+                            <p class="card-text">{{ $portofoliodigi->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofoliodigi->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($portouiux as $portofolioui)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="uiux">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofolioui->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofolioui->judul }}</h5>
+                            <p class="card-text">{{ $portofolioui->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofolioui->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        {{-- ganti aja paginate --}}
+    </div>
+    <!-- Service End -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Preview Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Preview" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{-- brosur --}}
+    <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
+        <div class="container">
+            <div class="text-center">
+                <small
+                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest
+                    Updates</small>
+                <h1 class="display-5 mb-3">Tersedia Brosur Catalog Portofolio Kami</h1>
+                <a href="https://drive.google.com/drive/folders/1xxAZEDpnAwcDy8lFLkbANgkLU3fmNFl8?usp=sharing"
+                    class="btn btn-danger text-white"><i class="fas fa-money-check-alt"></i> Our Portofolio</a>
+            </div>
+
+        </div>
+    </div>
+    {{-- endbrosur --}}
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -252,22 +402,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // Show all cards by default
-            var allCards = $('#tab-all .project-card');
-            $('#tab-basic, #tab-medium, #tab-custom').hide();
+        document.addEventListener('DOMContentLoaded', function() {
+            var filterLinks = document.querySelectorAll('.nav-tabs .nav-link');
+            var portfolioItems = document.querySelectorAll('.portfolio-item');
 
-            // Filter function
-            $('.nav-pills a').click(function() {
-                var target = $(this).attr('href');
-                if (target == '#tab-all') {
-                    $('#tab-all').show();
-                    allCards.show();
-                    $('#tab-basic, #tab-medium, #tab-custom').hide();
-                } else {
-                    $('#tab-all').hide();
-                    $(target).show().siblings('.tab-pane').hide();
-                }
+            filterLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    filterLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+
+                    link.classList.add('active');
+
+                    var filter = link.getAttribute('data-filter');
+
+                    portfolioItems.forEach(function(item) {
+                        if (filter === 'all' || item.getAttribute('data-category') ===
+                            filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            var modal = document.getElementById('imageModal');
+            var modalImage = document.getElementById('modalImage');
+
+            $('#imageModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var imageUrl = button.data('image'); // Extract info from data-* attributes
+                modalImage.src = imageUrl;
+            });
+
+            $('#imageModal').on('hidden.bs.modal', function() {
+                modalImage.src = '';
             });
         });
     </script>

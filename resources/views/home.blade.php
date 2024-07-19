@@ -731,13 +731,13 @@
     <!-- Service End -->
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
+    <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Our Profesional</h6>
                 <h1 class="mb-5">Portofolio</h1>
             </div>
-            <div class="row g-3">
+            <div class="row g-1">
                 <div class="col-lg-7 col-md-6">
                     <div class="row g-3">
                         @foreach ($portowebsite as $portofolioweb)
@@ -858,25 +858,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($blog as $blogs)
+            @foreach ($blog->take(4) as $blogs)
                 <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="card bg-dark border-light text-white bg-image hover-zoom"
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
                         style="border-radius: 15px;">
-                        <img class="card-img-top" src="{{ Storage::disk('s3')->url($blogs->image) }}"
-                            alt="Project Image" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                        <div class="card-body">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $blogs->judul }}</h5>
                             <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
-                            <p class="card-text">
+                            <p class="card-text mt-auto">
                                 <small class="text-muted">{{ $blogs->date }}</small>
                             </p>
-                            <a href="{{ route('blog.detail', $blogs->slug) }}" class="btn-sm btn-warning">Read
-                                More</a>
+                            <a href="{{ route('blog.detail', $blogs->slug) }}"
+                                class="btn-sm btn-warning mt-auto">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+
         <h5 class="mb-3 text-white" style="border-bottom: 1px solid white;">Top Artikel</h5>
         <div class="d-flex flex-wrap">
             @foreach ($blogkategori as $blogcat)

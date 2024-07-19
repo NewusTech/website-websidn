@@ -84,16 +84,16 @@
                     <a class="nav-link active" data-toggle="pill" href="#all-news">All News</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#website">Website</a>
+                    <a class="nav-link" data-toggle="pill" href="#website">Inspirasi Website</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#mobile">Mobile</a>
+                    <a class="nav-link" data-toggle="pill" href="#mobile">Software Terbaru</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#uiux">UI/UX</a>
+                    <a class="nav-link" data-toggle="pill" href="#uiux">Tips & Trik</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#pemrograman">Pemrograman</a>
+                    <a class="nav-link" data-toggle="pill" href="#pemrograman">Project</a>
                 </li>
             </ul>
         </div>
@@ -165,7 +165,7 @@
                 <div class="mb-4">
                     <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Top</h5>
                     <div class="list-group">
-                        @foreach ($blog as $blogs)
+                        @foreach ($blog->take(4) as $blogs)
                             <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                     <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
@@ -182,7 +182,7 @@
                 <div class="mb-4">
                     <h5 class="mb-3">Popular Posts</h5>
                     <div class="list-group">
-                        @foreach ($blog as $blogs)
+                        @foreach ($blog->take(4) as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h6 class="mb-1">{{ $blogs->judul }}</h6>
@@ -197,7 +197,7 @@
                 <div class="mb-4">
                     <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Terbaru</h5>
                     <div class="list-group">
-                        @foreach ($blog as $blogs)
+                        @foreach ($blog->take(4) as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                     <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
@@ -208,9 +208,9 @@
                                 </div>
                             </a>
                         @endforeach
-
                     </div>
                 </div>
+
 
                 <div class="mb-4">
                     <h5 class="mb-3">Categories</h5>
