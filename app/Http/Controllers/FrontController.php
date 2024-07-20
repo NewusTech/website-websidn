@@ -76,9 +76,9 @@ class FrontController extends Controller
             'blogkategori'
         ));
     }
+
     public function ServiceShow(Request $request)
-    
-        {   
+    {   
         $service = Cards::all()->where('kategori', 'Layanan')->take(4);
         $alltema = Carths::paginate(6); // Per page limit
 
@@ -92,10 +92,10 @@ class FrontController extends Controller
             'custom',
             'service',
             ));
-        }
-        public function PortfolioShow()
-    
-        {   
+    }
+
+    public function PortfolioShow()
+    {   
         $porto = Cards::all()->where('kategori', 'Portofolio')->take(1);
         $portowebsite = Cards::all()->where('judul', 'Website')->take(4);
         $portomobile = Cards::all()->where('judul', 'Mobile')->take(4);
@@ -108,21 +108,29 @@ class FrontController extends Controller
             'portodigital',
             'portouiux',
             ));
-        }
-        public function GalleryShow()
-        
-        {   
+    }
+    public function GalleryShow()
+    {   
         $gallery = Galeris::all();
             return view('gallery', compact(
             'gallery',
             
         ));
-        }
-        public function BlogShow()
-    
-        {   
+    }
+    public function BlogShow(Request $request)
+    {   
             $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
-            $blog = Blogs::with(['kategoris'])->paginate(8);
+            $tagId = $request->input('tag_id');
+
+                if ($tagId) {
+                    // Filter blog berdasarkan tag
+                    $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
+                        $query->where('blogtags.id', $tagId);
+                    })->with(['kategoris', 'tags'])->paginate(8);
+                } else {
+                    // Jika tidak ada tag yang dipilih, tampilkan semua blog
+                    $blog = Blogs::with(['kategoris', 'tags'])->paginate(8);
+                }
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
             $blogabove = Blogs::all()->take(3);
@@ -134,29 +142,38 @@ class FrontController extends Controller
                 'logo',
             ));
             }
-        public function AboutShow()
-    
-        {   
+
+    public function AboutShow()
+    {   
             $about = Abouts::all();
             return view('about', compact(
   
                 'about',
             ));
-        }
-        public function ContactShow()
-    
-        {   
+    }
+    public function ContactShow()
+    {   
             return view('contact');
-        }
-        public function BlogContent()
-    
-        {   
+    }
+    public function BlogContent()
+    {   
             return view('blogcontent');
-        }
-        public function BlogDetail($slug)
-        {
+    }
+    public function BlogDetail(Request $request, $slug)
+    {
             $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
             $blog = Blogs::all();
+            $tagId = $request->input('tag_id');
+
+                if ($tagId) {
+                    // Filter blog berdasarkan tag
+                    $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
+                        $query->where('blogtags.id', $tagId);
+                    })->with(['kategoris', 'tags'])->paginate(8);
+                } else {
+                    // Jika tidak ada tag yang dipilih, tampilkan semua blog
+                    $blog = Blogs::with(['kategoris', 'tags'])->paginate(8);
+                }
             $blogabove = Blogs::all()->take(3);
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
@@ -169,5 +186,5 @@ class FrontController extends Controller
                 'blogtags',
                 'logo',
             ));
-        }
+    }
 }

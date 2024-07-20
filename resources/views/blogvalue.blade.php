@@ -187,13 +187,28 @@
                     </ul>
                 </div>
 
+                <div class="mb-4">
+                    <h5 class="mb-3">Top Keyword</h5>
+                    <ul class="list-group">
+                        @foreach ($blog as $blogs)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="/blog/{{ $blogs->slug }}">{{ $blogs->keyword }}</a>
+                                <span class="badge badge-primary badge-pill">new</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
                 <!-- Tags -->
                 <div class="mb-4">
-                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Tags</h5>
+                    <h5 class="mb-3">Tags</h5>
                     <div class="d-flex flex-wrap">
+                        <a href="/blog" class="badge badge-secondary mr-2 mb-2 text-black" style="color:Tomato">All
+                            Tag</a>
                         @foreach ($blogtags as $blogtag)
-                            <a href="{{ route('blog') }}"
-                                class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                            <a href="/blog?tag_id={{ $blogtag->id }}"
+                                class="badge badge-secondary mr-2 mb-2 text-black"
+                                style="color:Tomato">{{ $blogtag->tags }}</a>
                         @endforeach
                     </div>
                 </div>
