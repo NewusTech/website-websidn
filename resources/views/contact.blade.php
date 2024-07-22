@@ -81,7 +81,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100 bg-image hover-zoom" style="border-radius: 15px;">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/bg.jpg" alt=""
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/contact.jpg" alt=""
                             style="object-fit: cover;">
                     </div>
                 </div>
