@@ -126,10 +126,10 @@ class FrontController extends Controller
                     // Filter blog berdasarkan tag
                     $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
                         $query->where('blogtags.id', $tagId);
-                    })->with(['kategoris', 'tags'])->paginate(8);
+                    })->with(['kategoris', 'tags'])->paginate(10);
                 } else {
                     // Jika tidak ada tag yang dipilih, tampilkan semua blog
-                    $blog = Blogs::with(['kategoris', 'tags'])->paginate(8);
+                    $blog = Blogs::with(['kategoris', 'tags'])->latest()->paginate(10);
                 }
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();

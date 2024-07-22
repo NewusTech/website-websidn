@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -27,6 +28,8 @@ use App\Http\Controllers\Admin\Blogger\BlogkategoriController;
 use App\Http\Controllers\Admin\Blogger\BlogtagController;
 use App\Http\Controllers\Admin\Blogger\BlogconsoleController;
 use Illuminate\Support\Facades\Route;
+
+route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 route::get('/', [FrontController::class, 'LogoShow'])->name('home');
 route::get('/layanan', [FrontController::class, 'ServiceShow'])->name('layanan');

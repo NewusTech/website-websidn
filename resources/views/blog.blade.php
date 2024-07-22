@@ -84,16 +84,16 @@
                     <a class="nav-link active" data-toggle="pill" href="#all-news">All News</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#website">Inspirasi Website</a>
+                    <a class="nav-link" data-toggle="pill" href="#website">Website</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#mobile">Software Terbaru</a>
+                    <a class="nav-link" data-toggle="pill" href="#mobile">Sosial Media</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#uiux">Tips & Trik</a>
+                    <a class="nav-link" data-toggle="pill" href="#uiux">Digital Marketing</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" data-toggle="pill" href="#pemrograman">Project</a>
+                    <a class="nav-link" data-toggle="pill" href="#pemrograman">SEO</a>
                 </li>
             </ul>
         </div>
@@ -180,7 +180,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h5 class="mb-3">Popular Posts</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Popular Posts</h5>
                     <div class="list-group">
                         @foreach ($blog->take(4) as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
@@ -203,7 +203,8 @@
                                     <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
                                         class="img-fluid rounded mx-1 d-block" alt="Post Image"
                                         style="width: 80px; height: 60px; object-fit: cover;">
-                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <h6 class="mb-1">{{ Str::limit($blogs->judul, 30, '...') }}</h6>
+
                                     <small>{{ $blogs->date }}</small>
                                 </div>
                             </a>
@@ -211,10 +212,8 @@
                     </div>
                 </div>
 
-
-
                 <div class="mb-4">
-                    <h5 class="mb-3">Categories</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Categories</h5>
                     <ul class="list-group">
                         @foreach ($blogkategori as $blogcat)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -226,7 +225,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h5 class="mb-3">Top Keyword</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Top Keyword</h5>
                     <ul class="list-group">
                         @foreach ($blog as $blogs)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -238,24 +237,21 @@
                 </div>
 
                 <div class="mb-4">
-                    <h5 class="mb-3">Tags</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Tags</h5>
                     <div class="d-flex flex-wrap">
-                        <a href="/blog" class="badge badge-secondary mr-2 mb-2 text-black" style="color:Tomato">All
+                        <a href="/blog" class="badge badge-secondary mr-2 mb-2 text-black"
+                            style="color:rgb(152, 29, 29)">All
                             Tag</a>
                         @foreach ($blogtags as $blogtag)
                             <a href="/blog?tag_id={{ $blogtag->id }}"
                                 class="badge badge-secondary mr-2 mb-2 text-black"
-                                style="color:Tomato">{{ $blogtag->tags }}</a>
+                                style="color:rgb(0, 0, 0)">{{ $blogtag->tags }}</a>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"

@@ -142,7 +142,7 @@
 
                 <!-- Popular Posts -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Popular Posts</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Popular Posts</h5>
                     <div class="list-group">
                         @foreach ($blog->take(4) as $blogs)
                             <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
@@ -176,7 +176,7 @@
 
                 <!-- Categories -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Categories</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Categories</h5>
                     <ul class="list-group">
                         @foreach ($blogkategori as $blogcat)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -188,7 +188,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h5 class="mb-3">Top Keyword</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Top Keyword</h5>
                     <ul class="list-group">
                         @foreach ($blog as $blogs)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -201,7 +201,7 @@
 
                 <!-- Tags -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Tags</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Tags</h5>
                     <div class="d-flex flex-wrap">
                         <a href="/blog" class="badge badge-secondary mr-2 mb-2 text-black" style="color:Tomato">All
                             Tag</a>
