@@ -330,7 +330,7 @@
             <div class="col-md-6">
                 <div class="embed-responsive embed-responsive-16by9" style="height: 200px;">
                     <video class="embed-responsive-item" controls>
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <source src="{{ asset('img/websidn2.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -346,6 +346,8 @@
             </div>
         </div>
     </div>
+    <br>
+
 
 
 
@@ -965,7 +967,8 @@
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         Websidn adalah Digital Agency Lampung yang berfokus pada strategi pemasaran yang dipadukan
-                        dengan kreativitas dengan tujuan untuk meningkatkan penjualan. Kami menyediakan beberapa jasa
+                        dengan kreativitas dengan tujuan untuk meningkatkan penjualan pada jasa website lampung. Kami
+                        menyediakan beberapa jasa
                         dengan harga yang terjangkau seperti jasa pembuatan website murah dan jasa kelola media sosial.
                     </div>
                 </div>
@@ -1041,7 +1044,7 @@
                     <div class="card-body">
                         Dengan menggunakan jasa dari Websidn, Anda dapat menghemat biaya karena tidak perlu mengeluarkan
                         banyak uang untuk meng-hire designer, content writer, web developer, ataupun IT support untuk
-                        membuat website dan kelola media sosial impian Anda.
+                        membuat website dan kelola media sosial impian Anda jasa website lampung.
                     </div>
                 </div>
             </div>
@@ -1131,7 +1134,7 @@
                     <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
