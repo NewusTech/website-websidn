@@ -29,25 +29,25 @@ use App\Http\Controllers\Admin\Blogger\BlogtagController;
 use App\Http\Controllers\Admin\Blogger\BlogconsoleController;
 use Illuminate\Support\Facades\Route;
 
-route::get('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-route::get('/', [FrontController::class, 'LogoShow'])->name('home');
-route::get('/layanan', [FrontController::class, 'ServiceShow'])->name('layanan');
-route::get('/portofolio', [FrontController::class, 'PortfolioShow'])->name('portofolio');
-route::get('/gallery', [FrontController::class, 'GalleryShow'])->name('gallery');
-route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
-route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
-route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
-route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
+Route::get('/', [FrontController::class, 'LogoShow'])->name('home');
+Route::get('/layanan', [FrontController::class, 'ServiceShow'])->name('layanan');
+Route::get('/portofolio', [FrontController::class, 'PortfolioShow'])->name('portofolio');
+Route::get('/gallery', [FrontController::class, 'GalleryShow'])->name('gallery');
+Route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
+Route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
+Route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
+Route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
 Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
 Route::controller(LoginController::class)->group(function () {
-    route::get('/login','LoginForm')->name('login');  // No middleware here
-    route::post('/login','login');
-    route::post('/logout','logout');
+    Route::get('/login','LoginForm')->name('login');  // No middleware here
+    Route::post('/login','login');
+    Route::post('/logout','logout');
   });
 
 Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(function(){
