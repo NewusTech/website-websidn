@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
-// use App\Models\Blogtags;
-// use App\Models\Blogkategoris;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;

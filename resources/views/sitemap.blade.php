@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+{!! '<' . '?xml version="1.0" encoding="UTF-8" ?' . '>' !!}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     @foreach ($data as $item)
         <url>
-            <loc>{{ $item['loc'] }}</loc>
+            <loc>{{ htmlspecialchars($item['loc'], ENT_XML1, 'UTF-8') }}</loc>
             <lastmod>{{ $item['lastmod'] }}</lastmod>
         </url>
     @endforeach
     @foreach ($blogs as $blog)
         <url>
-            <loc>{{ url('/blog/' . $blog->slug) }}</loc>
+            <loc>{{ htmlspecialchars(url('/blog/' . $blog->slug), ENT_XML1, 'UTF-8') }}</loc>
             <lastmod>{{ $blog->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         </url>
     @endforeach
     <url>
-        <loc>{{ url('/') }}</loc>
+        <loc>{{ htmlspecialchars(url('/'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
     <url>
-        <loc>{{ url('/layanan') }}</loc>
+        <loc>{{ htmlspecialchars(url('/layanan'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
     <url>
-        <loc>{{ url('/portofolio') }}</loc>
+        <loc>{{ htmlspecialchars(url('/portofolio'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
     <url>
-        <loc>{{ url('/gallery') }}</loc>
+        <loc>{{ htmlspecialchars(url('/gallery'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
     <url>
-        <loc>{{ url('/about') }}</loc>
+        <loc>{{ htmlspecialchars(url('/about'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
     <url>
-        <loc>{{ url('/contact') }}</loc>
+        <loc>{{ htmlspecialchars(url('/contact'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
     </url>
 </urlset>

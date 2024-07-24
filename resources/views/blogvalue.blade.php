@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Websidn - Website Murah di Lampung</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="website murah, website Lampung, jasa pembuatan website">
-    <meta name="description" content="Websidn menyediakan jasa pembuatan website murah dan profesional di Lampung.">
+    <title>Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency</title>
+    <meta name="keywords"
+        content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
+    <meta name="description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon" type="image/x-icon">
