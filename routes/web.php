@@ -39,6 +39,11 @@ Route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
 Route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
 Route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
 Route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
+Route::get('/{slug}', function ($slug) {
+    return redirect()->route('blog.detail', ['slug' => $slug]);
+});
+
+// Route baru untuk /blog/{slug}
 Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
 // Route::get('/', function () {
 //     return view('welcome');

@@ -11,7 +11,12 @@
             <loc>{{ htmlspecialchars(url('/blog/' . $blog->slug), ENT_XML1, 'UTF-8') }}</loc>
             <lastmod>{{ $blog->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         </url>
+        <url>
+            <loc>{{ htmlspecialchars(url('/' . $blog->slug), ENT_XML1, 'UTF-8') }}</loc>
+            <lastmod>{{ $blog->updated_at->tz('UTC')->toAtomString() }}</lastmod>
+        </url>
     @endforeach
+
     <url>
         <loc>{{ htmlspecialchars(url('/'), ENT_XML1, 'UTF-8') }}</loc>
         <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
