@@ -39,11 +39,18 @@ Route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
 Route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
 Route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
 Route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
+// Route::get('/{slug}', function ($slug) {
+//     return redirect()->route('blog.detail', ['slug' => $slug]);
+// });
+Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
+
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login','LoginForm')->name('login'); 
     Route::post('/login','login');
     Route::post('/logout','logout');
   });
+
+  
 
 Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(function(){
     Route::prefix('')->group(function () {
@@ -187,8 +194,5 @@ Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(
         Route::delete('/about/{id}', [AboutController::class, 'AboutDelete'])->name('about.delete');
     });
 
-    Route::get('/{slug}', function ($slug) {
-        return redirect()->route('blog.detail', ['slug' => $slug]);
-    });
-    Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
+    
 });
