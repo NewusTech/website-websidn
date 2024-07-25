@@ -82,7 +82,6 @@
     <!-- Containheader Start -->
     <div class="container-fluid p-0 mb-1">
         <div class="position-relative full-height-container">
-            {{-- <img class="img-fluid full-width-image" src="img/bg.jpg" alt=""> --}}
             @foreach ($header as $headers)
                 <img src={{ Storage::disk('s3')->url($headers->images->path) }} class="img-fluid full-width-image"
                     alt="Image">
@@ -221,13 +220,12 @@
                                                     alt="Project Image">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $pegawai->kategori }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->judul }}</p>
                                                     <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -252,13 +250,12 @@
                                                     alt="Project Image">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $pegawai->kategori }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->judul }}</p>
                                                     <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -280,13 +277,12 @@
                                                     alt="Project Image">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $pegawai->kategori }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->judul }}</p>
                                                     <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -308,13 +304,12 @@
                                                     alt="Project Image">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $pegawai->kategori }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->judul }}</p>
                                                     <a href="{{ $pegawai->link }}" class="btn btn-warning"
                                                         style=""><i class="fas fa-satellite-dish"></i>Demo</a>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -931,19 +926,19 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-warning px-3">Testimonial</h6>
+                <h6 class="section-title bg-white text-center text-warning px-3 d-inline-block">Testimonial</h6>
                 <h1 class="mb-5">Pelanggan Kami Berkata!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-
                 @foreach ($testimoni as $review)
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ Storage::disk('s3')->url($review->image) }}" style="width: 80px; height: 80px;">
+                        <img class="border rounded-circle p-2 mx-auto mb-3 shadow"
+                            src="{{ Storage::disk('s3')->url($review->image) }}" alt="{{ $review->name }}"
+                            style="width: 100px; height: 100px;">
                         <h5 class="mb-0">{{ $review->name }}</h5>
-                        <p>{{ $review->job }}</p>
-                        <div class="testimonial-text bg-light text-center p-4">
-                            <p class="mb-0">{{ $review->description }}</p>
+                        <p class="text-muted">{{ $review->job }}</p>
+                        <div class="testimonial-text bg-light text-center p-4 shadow-sm rounded">
+                            <p class="mb-0 font-italic">"{{ $review->description }}"</p>
                         </div>
                     </div>
                 @endforeach
@@ -951,6 +946,7 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
 
     {{-- faq start --}}
     <div class="container mt-5">
@@ -1098,11 +1094,11 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -1111,11 +1107,13 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -1126,7 +1124,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -1150,16 +1148,16 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Websidn
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
                             Developer</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">Websidn</a>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>
@@ -1176,7 +1174,7 @@
     </a>
 
     <!-- Sticky WhatsApp -->
-    <a href="https://wa.me/your-number" class="btn btn-lg btn-success btn-lg-square"
+    <a href="https://wa.me/6287898644177" class="btn btn-lg btn-success btn-lg-square"
         style="position: fixed; bottom: 80px; right: 20px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 15px;">
         <i class="fab fa-whatsapp"></i>
     </a>

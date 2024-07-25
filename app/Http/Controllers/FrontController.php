@@ -34,7 +34,7 @@ class FrontController extends Controller
         $price = Prices::all()->take(4);
         $gallery = Galeris::with(['images','texts'])->take(4)->get();
 
-        $alltema = Carths::paginate(6); // Per page limit
+        $alltema = Carths::paginate(6);
 
         $basic = Carths::all()->where('kategori', 'basic')->take(6);
         $medium = Carths::all()->where('kategori', 'medium')->take(6);
@@ -80,7 +80,7 @@ class FrontController extends Controller
     public function ServiceShow(Request $request)
     {   
         $service = Cards::all()->where('kategori', 'Layanan')->take(4);
-        $alltema = Carths::paginate(6); // Per page limit
+        $alltema = Carths::paginate(6);
 
         $basic = Carths::all()->where('kategori', 'basic')->take(6);
         $medium = Carths::all()->where('kategori', 'medium')->take(6);
@@ -123,12 +123,10 @@ class FrontController extends Controller
             $tagId = $request->input('tag_id');
 
                 if ($tagId) {
-                    // Filter blog berdasarkan tag
                     $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
                         $query->where('blogtags.id', $tagId);
                     })->with(['kategoris', 'tags'])->paginate(10);
                 } else {
-                    // Jika tidak ada tag yang dipilih, tampilkan semua blog
                     $blog = Blogs::with(['kategoris', 'tags'])->latest()->paginate(10);
                 }
             $blogkategori = Blogkategoris::all();
@@ -166,12 +164,10 @@ class FrontController extends Controller
             $tagId = $request->input('tag_id');
 
                 if ($tagId) {
-                    // Filter blog berdasarkan tag
                     $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
                         $query->where('blogtags.id', $tagId);
                     })->with(['kategoris', 'tags'])->paginate(8);
                 } else {
-                    // Jika tidak ada tag yang dipilih, tampilkan semua blog
                     $blog = Blogs::with(['kategoris', 'tags'])->paginate(8);
                 }
             $blogabove = Blogs::all()->take(3);

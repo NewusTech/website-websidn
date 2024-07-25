@@ -667,11 +667,11 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -680,11 +680,13 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -695,7 +697,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -707,7 +709,7 @@
                     <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
@@ -719,16 +721,16 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Websidn
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
                             Developer</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">Websidn</a>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>
