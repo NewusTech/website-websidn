@@ -62,6 +62,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Nomor</th>
                         <th>ID</th>
                         <th>Judul</th>
                         <th>Slug</th>
@@ -78,8 +79,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($blogs as $blog)
+                    @foreach ($blogs->take(5) as $blog)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $blog->id }}</td>
                             <td>{{ $blog->judul }}</td>
                             <td>{{ $blog->slug }}</td>
@@ -111,8 +113,12 @@
                             </td>
                         </tr>
                     @endforeach
+
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                {{ $blogs->links() }}
+            </div>
         </div>
     </div>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>

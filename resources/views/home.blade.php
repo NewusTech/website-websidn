@@ -3,10 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Websidn - Website Murah di Lampung </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency</title>
+    <meta name="keywords"
+        content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
+    <meta name="description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency" />
+    <meta property="og:description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda." />
+    <meta property="og:image" content="img/bg.jpg" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon">
@@ -28,10 +38,6 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- aos animated --}}
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -57,15 +63,8 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            {{-- <img class="img-fluid" src="img/websidn.png" alt="" style="width: 50%; height: auto;"> --}}
-            @foreach ($logo as $logos)
-                @if ($logos->images)
-                    <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image"
-                        style="height:100px; object-fit: cover; ">
-                @else
-                    Gambar tidak tersedia
-                @endif
-            @endforeach
+            <img class="img-fluid" src="img/websidn.png" alt="Logo Websidn Digital Agency"
+                style="width: 50%; height: auto;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -90,7 +89,6 @@
     <!-- Containheader Start -->
     <div class="container-fluid p-0 mb-1">
         <div class="position-relative full-height-container">
-            {{-- <img class="img-fluid full-width-image" src="img/bg.jpg" alt=""> --}}
             @foreach ($header as $headers)
                 <img src={{ Storage::disk('s3')->url($headers->images->path) }} class="img-fluid full-width-image"
                     alt="Image">
@@ -128,10 +126,10 @@
             <div class="row g-4">
                 @foreach ($service as $layanan)
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item text-center pt-3">
-                            <div class="p-4">
+                        <div class="service-item text-center">
+                            <div class="p-0">
                                 <img class="img-fluid" src="{{ Storage::disk('s3')->url($layanan->image) }}"
-                                    alt="">
+                                    alt="Layanan Websidn Digital Agency">
                                 <h5 class="mb-3">{{ $layanan->judul }}</h5>
                             </div>
                         </div>
@@ -154,32 +152,64 @@
             <P class="text-dark text-center">Berbagai pilihan Template dapat anda temukan dan gunakan untuk website
                 bisnis anda.</P>
             <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
-                            data-toggle="pill" href="#tab-all">
-                            <span class="text-dark" style="width: 150px;">All Events</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-basic">
-                            <span class="text-dark" style="width: 150px;">Basic</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-medium">
-                            <span class="text-dark" style="width: 150px;">Medium</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">Custom</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="container-fluid">
+                    {{-- ketika mode desktop tampilkan ini dan hide di mode mobile --}}
+                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-none d-md-flex">
+                        <li class="nav-item p-2">
+                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
+                                data-toggle="pill" href="#tab-all">
+                                <span class="text-dark" style="width: 150px;">All Events</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-basic">
+                                <span class="text-dark" style="width: 150px;">Basic</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-medium">
+                                <span class="text-dark" style="width: 150px;">Medium</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-custom">
+                                <span class="text-dark" style="width: 150px;">Custom</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    {{-- ketika mode mobile tampilkan ini dan hide di mode desktop --}}
+                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-flex d-md-none">
+                        <li class="nav-item p-2">
+                            <a class="mx-1 py-1 border border-primary bg-light rounded-pill active" data-toggle="pill"
+                                href="#tab-all">
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">All Events</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-basic">
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Basic</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-medium">
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Medium</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="mx-1 py-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                                href="#tab-custom">
+                                <span class="text-dark" style="font-size: 14px; width: 150px;">Custom</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="tab-content">
                     <div id="tab-all" class="tab-pane fade show active p-0">
                         <div class="row g-4">
@@ -195,15 +225,13 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -227,15 +255,13 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,15 +282,13 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,15 +309,13 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
-                                                    {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
-                                                    <button class="btn btn-danger"><i
-                                                            class="fas fa-money-check-alt"></i>
-                                                        Beli </button>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
+                                                    <a href="https://wa.me/6287898644177" class="btn btn-danger"
+                                                        style=""><i class="fas fa-money-check-alt"></i>
+                                                        Beli </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -307,6 +329,29 @@
         </div>
     </div>
     {{-- endtemplate --}}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9" style="height: 200px;">
+                    <video class="embed-responsive-item" controls>
+                        <source src="{{ asset('img/websidn2.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Video Penjelasan</h3>
+                <p>
+                    Menggunakan template website dari websidn.com sangat mudah dan cepat. Pertama, pilih dan unduh
+                    template yang diinginkan. Setelah itu, buka file template dan pindahkan ke folder proyek Anda.
+                    Selanjutnya, sesuaikan isi template dengan informasi dan gambar bisnis Anda. Dalam beberapa langkah
+                    sederhana, Anda akan memiliki website profesional yang siap digunakan.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
 
     <!-- Service Start -->
     <div class="container-fluid" style="background: #280F91;">
@@ -351,8 +396,8 @@
                                     pemula</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -379,8 +424,8 @@
                                     personal branding</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -407,8 +452,8 @@
                                     bisnis menengah</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -418,7 +463,6 @@
             <div id="mobile" class="row" style="display: none;">
                 <h1 class="text-white">Mobile</h1>
                 <div class="d-none gap-2 d-lg-flex">
-
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
@@ -441,8 +485,8 @@
                                     Hastag</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -469,8 +513,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -497,8 +541,8 @@
                                 </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Beli Sekarang <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -512,69 +556,83 @@
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4 ">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Pay as You Go</h5>
+                                <h5>Basic</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$299</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp 300.000</h1>
+                                <h5 class="text-muted"><small>LANDING PAGE</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Subdomain
+                                    (nama.websidn.com)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>1 Halaman
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 1x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    pemula</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Standard Plan</h5>
+                                <h5>Medium</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$499</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp 500.000</h1>
+                                <h5 class="text-muted"><small>COMPANY PROFILE</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Domain
+                                    .com/tahun</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>6 Halaman +
+                                    1 Panel Admin
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 3x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    personal branding</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-                                <h5>Premium Plan</h5>
+                                <h5>Custom</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$799</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>(Negotiate)</h1>
+                                <h5 class="text-muted"><small>PROFESIONAL</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Domain
+                                    .com/tahun</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Halaman
+                                    (sesuai permintaan)
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Ringan,
+                                    Responsif dan Mobile Friendly</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis 3x
+                                    Revisi</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Cocok untuk
+                                    bisnis menengah</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -590,20 +648,24 @@
                                 <h5>Pay as You Go</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$199</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.650.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Design 15
+                                    Feed (12 Feeds dan 3 Story)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Desain
+                                    Kreatif</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Gratis Riset
+                                    Hastag</li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -613,20 +675,25 @@
                                 <h5>Standard Plan</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$399</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.800.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>24 Design (18
+                                    Feed dan 6 Story)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Posting oleh
+                                    Admin</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Instagram
+                                    Ads
+                                </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -636,20 +703,25 @@
                                 <h5>Premium Plan</h5>
                             </div>
                             <div class="card-body">
-                                <h1>$599</h1>
-                                <h5 class="text-muted"><small>Taxes per Month</small></h5>
+                                <h1>Rp.1.000.000</h1>
+                                <h5 class="text-muted"><small>Untuk 30 Hari</small></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>Real-time fee
-                                    reporting</li>
-                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Pay only for
-                                    what you use</li>
-                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i> No setup,
-                                    monthly, or hidden fees</li>
+                                <li class="list-group-item"><i class="fas fa-male text-success mx-2"></i>40 Design (27
+                                    Feed, 10 Story, 3 Reels)</li>
+                                <li class="list-group-item"><i class="fas fa-venus text-success mx-2"></i>Caption +
+                                    Copywriting</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>1x Revisi
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Posting oleh
+                                    Admin</li>
+                                <li class="list-group-item"><i class="fas fa-gavel text-success mx-2"></i>Instagram
+                                    Ads
+                                </li>
                             </ul>
                             <div class="card-footer border-top-0">
-                                <a href="#" class="text-muted text-uppercase">Create Account <i
-                                        class="fas fa-arrow-right"></i></a>
+                                <a href="https://wa.me/6287898644177" class="text-muted text-uppercase">Beli Sekarang
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -660,13 +732,13 @@
     <!-- Service End -->
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
+    <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Our Profesional</h6>
                 <h1 class="mb-5">Portofolio</h1>
             </div>
-            <div class="row g-3">
+            <div class="row g-1">
                 <div class="col-lg-7 col-md-6">
                     <div class="row g-3">
                         @foreach ($portowebsite as $portofolioweb)
@@ -744,8 +816,12 @@
                                     style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 250px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5 class="card-title">Mal Pelayanan Publik</h5>
-                                        <p class="card-text">MPP ADALAH ADALAH ADALAH ADALAH...</p>
+                                        <h5 class="card-title">Website Terbaik dengan Bahasa Pemrograman</h5>
+                                        <p class="card-text">Website adalah sekumpulan halaman web yang saling terkait
+                                            dan dapat diakses melalui internet menggunakan sebuah alamat URL (Uniform
+                                            Resource Locator). Website biasanya berisi informasi yang dapat diakses oleh
+                                            pengguna untuk berbagai tujuan, seperti mencari informasi, berkomunikasi,
+                                            atau melakukan transaksi.</p>
                                     </div>
                                     <div>
                                         <p class="card-text">
@@ -763,8 +839,10 @@
                                     style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 250px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5 class="card-title">Mal Pelayanan Publik</h5>
-                                        <p class="card-text">MPP ADALAH ADALAH ADALAH ADALAH...</p>
+                                        <h5 class="card-title">Websidn Website Indonesia</h5>
+                                        <p class="card-text">Website Indonesia adalah penyedia layanan
+                                            pembuatan website profesional yang menawarkan solusi web murah dan
+                                            berkualitas di Indonesia.</p>
                                     </div>
                                     <div>
                                         <p class="card-text">
@@ -781,25 +859,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($blog as $blogs)
+            @foreach ($blog->take(4) as $blogs)
                 <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="card bg-dark border-light text-white bg-image hover-zoom"
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
                         style="border-radius: 15px;">
-                        <img class="card-img-top" src="{{ Storage::disk('s3')->url($blogs->image) }}"
-                            alt="Project Image" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                        <div class="card-body">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $blogs->judul }}</h5>
                             <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
-                            <p class="card-text">
+                            <p class="card-text mt-auto">
                                 <small class="text-muted">{{ $blogs->date }}</small>
                             </p>
-                            <a href="{{ route('blog.detail', $blogs->slug) }}" class="btn-sm btn-warning">Read
-                                More</a>
+                            <a href="{{ route('blog.detail', $blogs->slug) }}"
+                                class="btn-sm btn-warning mt-auto">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+
         <h5 class="mb-3 text-white" style="border-bottom: 1px solid white;">Top Artikel</h5>
         <div class="d-flex flex-wrap">
             @foreach ($blogkategori as $blogcat)
@@ -846,19 +926,19 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-warning px-3">Testimonial</h6>
+                <h6 class="section-title bg-white text-center text-warning px-3 d-inline-block">Testimonial</h6>
                 <h1 class="mb-5">Pelanggan Kami Berkata!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-
                 @foreach ($testimoni as $review)
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ Storage::disk('s3')->url($review->image) }}" style="width: 80px; height: 80px;">
+                        <img class="border rounded-circle p-2 mx-auto mb-3 shadow"
+                            src="{{ Storage::disk('s3')->url($review->image) }}" alt="{{ $review->name }}"
+                            style="width: 100px; height: 100px;">
                         <h5 class="mb-0">{{ $review->name }}</h5>
-                        <p>{{ $review->job }}</p>
-                        <div class="testimonial-text bg-light text-center p-4">
-                            <p class="mb-0">{{ $review->description }}</p>
+                        <p class="text-muted">{{ $review->job }}</p>
+                        <div class="testimonial-text bg-light text-center p-4 shadow-sm rounded">
+                            <p class="mb-0 font-italic">"{{ $review->description }}"</p>
                         </div>
                     </div>
                 @endforeach
@@ -878,16 +958,17 @@
                     <h5 class="mb-0">
                         <button class="btn btn-link text-primary" data-toggle="collapse" data-target="#collapseOne"
                             aria-expanded="true" aria-controls="collapseOne"><i class="fas fa-question-circle"></i>
-                            Berapa biaya yang diperlukan untuk membuat website?
+                            Apa itu Websidn??
                         </button>
                     </h5>
                 </div>
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        Imajiner memberikan layanan pembuatan website secara custom yang disesuaikan dengan kebutuhan.
-                        Oleh karena itu, penawaran harga secara akurat baru dapat diketahui setelah proses konsultasi.
-                        Untuk melihat estimasi biaya, Anda dapat mengunjungi halaman Pricing.
+                        Websidn adalah Digital Agency Lampung yang berfokus pada strategi pemasaran yang dipadukan
+                        dengan kreativitas dengan tujuan untuk meningkatkan penjualan pada jasa website lampung. Kami
+                        menyediakan beberapa jasa
+                        dengan harga yang terjangkau seperti jasa pembuatan website murah dan jasa kelola media sosial.
                     </div>
                 </div>
             </div>
@@ -897,13 +978,18 @@
                         <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
                             data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> <i
                                 class="fas fa-question-circle"></i>
-                            Apa saja yang perlu dipersiapkan untuk membuat website?
+                            Apa saja layanan yang ditawarkan oleh Websidn?
                         </button>
                     </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
-                        Isi jawaban untuk pertanyaan ini di sini.
+                        Kami menawarkan berbagai layanan, termasuk:
+                        1. Pembuatan Website (Bisnis dan Personal)
+                        2. Manajemen Media Sosial
+                        3. Optimasi SEO & SEM
+                        4. Meta Ads (Facebook, Instagram, dan TikTok)
+                        5. Konsultasi dan Pelatihan Digital
                     </div>
                 </div>
             </div>
@@ -913,17 +999,90 @@
                         <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i
                                 class="fas fa-question-circle"></i>
-                            Berapa lama waktu yang dibutuhkan untuk membuat website?
+                            Bagaimana jika ingin menggunakan jasa di Websidn?
                         </button>
                     </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                        Isi jawaban untuk pertanyaan ini di sini.
+                        Untuk memulai, Anda bisa menghubungi kami melalui form kontak di website kami atau langsung
+                        mengirimkan email ke websidn@gmail.com. Tim kami akan mengatur pertemuan untuk mendiskusikan
+                        kebutuhan dan tujuan Anda.
                     </div>
                 </div>
             </div>
             <!-- Tambahkan lebih banyak card untuk pertanyaan lainnya -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i
+                                class="fas fa-question-circle"></i>
+                            Berapa biaya yang diperlukan?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn memberikan layanan pembuatan website dan pengelolaan media sosial dengan harga yang
+                        sangat terjangkau. Untuk melihat estimasi biaya, Anda dapat mengunjungi halaman Harga.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><i
+                                class="fas fa-question-circle"></i>
+                            Mengapa harus menggunakan jasa Websidn?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <div class="card-body">
+                        Dengan menggunakan jasa dari Websidn, Anda dapat menghemat biaya karena tidak perlu mengeluarkan
+                        banyak uang untuk meng-hire designer, content writer, web developer, ataupun IT support untuk
+                        membuat website dan kelola media sosial impian Anda jasa website lampung.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree"><i
+                                class="fas fa-question-circle"></i>
+                            Project apa saja yang sudah pernah ditangani oleh websidn?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn sudah melayani lebih dari 100 perusahaan dan bisnis untuk kebutuhan website profesional
+                        dan pengelolaan media sosial. Silakan kunjungi halaman Portfolio dan Gallery kami untuk melihat
+                        beberapa contoh project yang berhasil diselesaikan.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header" id="headingSeven">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary collapsed" data-toggle="collapse"
+                            data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven"><i
+                                class="fas fa-question-circle"></i>
+                            Apakah Websidn berbadan hukum? Di mana lokasi kantornya?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                    <div class="card-body">
+                        Websidn merupakan perusahaan berbadan hukum dengan nama CV. Newus Technology yang memiliki
+                        kantor fisik di Teluk Betung, Bandar Lampung. Apabila Anda ingin berdiskusi tatap muka, maka
+                        kami mempersilakan Anda untuk datang ke kantor kami yang terdaftar pada Google Map.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -934,11 +1093,11 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -947,11 +1106,13 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -962,7 +1123,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -974,7 +1135,7 @@
                     <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
@@ -986,16 +1147,16 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Websidn
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
                             Developer</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">Websidn</a>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>
@@ -1004,7 +1165,6 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
         style="position: fixed; bottom: 20px; right: 20px;">
@@ -1012,7 +1172,7 @@
     </a>
 
     <!-- Sticky WhatsApp -->
-    <a href="https://wa.me/your-number" class="btn btn-lg btn-success btn-lg-square"
+    <a href="https://wa.me/6287898644177" class="btn btn-lg btn-success btn-lg-square"
         style="position: fixed; bottom: 80px; right: 20px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 15px;">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -1024,7 +1184,6 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
@@ -1075,5 +1234,4 @@
     </script>
 
 </body>
-
 </html>

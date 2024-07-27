@@ -3,10 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Websidn - Website Murah di Lampung </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency</title>
+    <meta name="keywords"
+        content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
+    <meta name="description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency" />
+    <meta property="og:description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda." />
+    <meta property="og:image" content="img/bg.jpg" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon">
@@ -85,8 +95,8 @@
             <div class="row g-4">
                 @foreach ($service as $layanan)
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item text-center pt-3">
-                            <div class="p-4">
+                        <div class="service-item text-center">
+                            <div class="p-0">
                                 <img class="img-fluid" src="{{ Storage::disk('s3')->url($layanan->image) }}"
                                     alt="">
                                 <h5 class="mb-3">{{ $layanan->judul }}</h5>
@@ -112,7 +122,8 @@
             <P class="text-dark text-center">Berbagai pilihan Template dapat anda temukan dan gunakan untuk website
                 bisnis anda.</P>
             <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                {{-- ketika mode desktop tampilkan ini dan hide di mode mobile --}}
+                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-none d-md-flex">
                     <li class="nav-item p-2">
                         <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
                             data-toggle="pill" href="#tab-all">
@@ -138,6 +149,34 @@
                         </a>
                     </li>
                 </ul>
+
+                {{-- ketika mode mobile tampilkan ini dan hide di mode desktop --}}
+                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 d-flex d-md-none">
+                    <li class="nav-item p-2">
+                        <a class="mx-1 py-1 border border-primary bg-light rounded-pill active" data-toggle="pill"
+                            href="#tab-all">
+                            <span class="text-dark" style="width: 150px;">All Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                            href="#tab-basic">
+                            <span class="text-dark" style="width: 150px;">Basic</span>
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="py-1 mx-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                            href="#tab-medium">
+                            <span class="text-dark" style="width: 150px;">Medium</span>
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="mx-1 py-1 border border-primary bg-light rounded-pill" data-toggle="pill"
+                            href="#tab-custom">
+                            <span class="text-dark" style="width: 150px;">Custom</span>
+                        </a>
+                    </li>
+                </ul>
                 <div class="tab-content">
                     <div id="tab-all" class="tab-pane fade show active p-0">
                         <div class="row g-4">
@@ -153,12 +192,11 @@
                                                     src="{{ Storage::disk('s3')->url($pegawai->image) }}"
                                                     alt="Project Image">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $pegawai->judul }}</h5>
+                                                    <h5 class="card-title">{{ $pegawai->kategori }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
-                                                    <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <p class="card-text">{{ $pegawai->judul }}</p>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -188,9 +226,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -217,9 +254,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -246,9 +282,8 @@
                                                     <h5 class="card-title">{{ $pegawai->judul }}</h5>
                                                     {{-- <p class="card-text">Dinas Penanaman Modal</p> --}}
                                                     <p class="card-text">{{ $pegawai->detail }}</p>
-                                                    <button class="btn btn-warning"><i
-                                                            class="fas fa-satellite-dish"></i>
-                                                        Demo </button>
+                                                    <a href="{{ $pegawai->link }}" class="btn btn-warning"
+                                                        style=""><i class="fas fa-satellite-dish"></i>Demo</a>
                                                     <button class="btn btn-danger"><i
                                                             class="fas fa-money-check-alt"></i>
                                                         Beli </button>
@@ -616,20 +651,21 @@
     </div>
     <!-- Service End -->
 
-    {{-- template --}}
+    {{-- brosur --}}
     <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
         <div class="container">
             <div class="text-center">
                 <small
                     class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest
                     Updates</small>
-                <h1 class="display-5 mb-3">Tersedia Tema kami</h1>
-                <button class="btn btn-danger"><i class="fas fa-money-check-alt"></i>
-                    Our Brosur </button>
+                <h1 class="display-5 mb-3">Tersedia Brosur Catalog Produk Kami</h1>
+                <a href="https://drive.google.com/drive/folders/1xxAZEDpnAwcDy8lFLkbANgkLU3fmNFl8?usp=sharing"
+                    class="btn btn-danger text-white"><i class="fas fa-money-check-alt"></i> Our Brosur</a>
             </div>
 
         </div>
     </div>
+    {{-- endbrosur --}}
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -638,23 +674,26 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,
+                        Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -665,7 +704,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -673,11 +712,11 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-3">Question</h4>
+                    <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
@@ -688,16 +727,17 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
+                            Developer</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>

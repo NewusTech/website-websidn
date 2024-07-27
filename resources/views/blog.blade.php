@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Websidn - Website Murah di Lampung </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency</title>
+    <meta name="keywords"
+        content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
+    <meta name="description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon">
@@ -28,10 +31,6 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- aos animated --}}
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -80,99 +79,113 @@
     <!-- Navbar End -->
 
     {{-- template --}}
-    <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="display-5 mb-3">Tersedia Tema kami</h1>
-            </div>
-            <P class="text-dark text-center">With more than 5 years experience supporting 50+ customers, you can trust
-                Newus
-                Technology to deliver</P>
-            <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
-                            data-toggle="pill" href="#tab-all">
-                            <span class="text-dark" style="width: 150px;">All News</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-basic">
-                            <span class="text-dark" style="width: 150px;">Website</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-medium">
-                            <span class="text-dark" style="width: 150px;">Mobile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">UI/UX</span>
-                        </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-toggle="pill"
-                            href="#tab-custom">
-                            <span class="text-dark" style="width: 150px;">Pemrograman</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container-fluid">
+        <h2 class="mb-4 text-center text-black pt-4">Blog</h2>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                <li class="nav-item p-2">
+                    <a class="nav-link active" data-toggle="pill" href="#all-news">All News</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#website">Website</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#mobile">Sosial Media</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#uiux">Digital Marketing</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="pill" href="#pemrograman">SEO</a>
+                </li>
+            </ul>
         </div>
-    </div>
 
-    {{-- content --}}
-    <div class="container mt-5">
         <div class="row">
-            <!-- Main Content -->
             <div class="col-md-8">
-                @foreach ($blog as $blogs)
-                    <div class="card mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="{{ Storage::disk('s3')->url($blogs->image) }}" class="card-img"
-                                    alt="Post Image">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <p class="card-text"><small class="text-muted">{{ $blogs->date }} •
-                                            {{ $blogs->id_kategori }}</small>
-                                    </p>
-                                    <h5 class="card-title">{{ $blogs->judul }}</h5>
-                                    <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
-                                    <a href="{{ route('blog.detail', $blogs->slug) }}"
-                                        class="btn btn-outline-primary">Read More</a>
+                <div class="tab-content">
+                    <div id="all-news" class="tab-pane fade show active">
+                        @foreach ($blog as $blogs)
+                            <div class="card mb-3" data-category="{{ $blogs->kategoris->kategori }}">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::disk('s3')->url($blogs->image) }}" class="card-img"
+                                            alt="Post Image">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <p class="card-text"><small class="text-muted">{{ $blogs->date }} •
+                                                    {{ $blogs->kategoris->kategori }}</small></p>
+                                            <h5 class="card-title">{{ $blogs->judul }}</h5>
+                                            <p class="card-text">{{ $blogs->deskripsi_singkat }}</p>
+                                            <a href="{{ route('blog.detail', $blogs->slug) }}"
+                                                class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                        <div class="d-flex justify-content-center">
+                            {{ $blog->links() }}
                         </div>
                     </div>
-                @endforeach
+
+                    @foreach (['website', 'mobile', 'uiux', 'pemrograman'] as $category)
+                        <div id="{{ $category }}" class="tab-pane fade">
+                            @foreach ($blog as $blogss)
+                                @if ($blogss->kategoris->kategori == $category)
+                                    <div class="card mb-3" data-category="{{ $blogss->kategoris->kategori }}">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="{{ Storage::disk('s3')->url($blogss->image) }}"
+                                                    class="card-img" alt="Post Image">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <p class="card-text"><small
+                                                            class="text-muted">{{ $blogss->date }} •
+                                                            {{ $blogss->kategoris->kategori }}</small></p>
+                                                    <h5 class="card-title">{{ $blogss->judul }}</h5>
+                                                    <p class="card-text">{{ $blogss->deskripsi_singkat }}</p>
+                                                    <a href="{{ route('blog.detail', $blogss->slug) }}"
+                                                        class="btn btn-outline-primary">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
             <!-- Sidebar -->
-            <div class="col-md-4">
-                <!-- Search -->
-                {{-- <div class="mb-4">
-                    <h5 class="mb-3">Search</h5>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Go</button>
-                            </div>
-                        </div>
-                    </form>
-                </div> --}}
 
-                <!-- Popular Posts -->
+            <div class="col-md-4">
+
+                <!-- Berita Top -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Popular Posts</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Top</h5>
                     <div class="list-group">
-                        @foreach ($blog as $blogs)
+                        @foreach ($blog->take(4) as $blogs)
+                            <a href="{{ route('blog') }}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ $blogs->judul }}</h6>
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Popular Posts</h5>
+                    <div class="list-group">
+                        @foreach ($blog->take(4) as $blogs)
                             <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h6 class="mb-1">{{ $blogs->judul }}</h6>
@@ -183,9 +196,27 @@
                     </div>
                 </div>
 
-                <!-- Categories -->
+                <!-- Berita Terbaru -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Categories</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Berita Terbaru</h5>
+                    <div class="list-group">
+                        @foreach ($blog->sortByDesc('date')->take(4) as $blogs)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <img src="{{ Storage::disk('s3')->url($blogs->image) }}"
+                                        class="img-fluid rounded mx-1 d-block" alt="Post Image"
+                                        style="width: 80px; height: 60px; object-fit: cover;">
+                                    <h6 class="mb-1">{{ Str::limit($blogs->judul, 30, '...') }}</h6>
+
+                                    <small>{{ $blogs->date }}</small>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Categories</h5>
                     <ul class="list-group">
                         @foreach ($blogkategori as $blogcat)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -196,12 +227,28 @@
                     </ul>
                 </div>
 
-                <!-- Tags -->
                 <div class="mb-4">
-                    <h5 class="mb-3">Tags</h5>
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Top Keyword</h5>
+                    <ul class="list-group">
+                        @foreach ($blog as $blogs)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="/blog/{{ $blogs->slug }}">{{ $blogs->keyword }}</a>
+                                <span class="badge badge-primary badge-pill">new</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="mb-3" style="border-bottom: 1px solid black;">Tags</h5>
                     <div class="d-flex flex-wrap">
+                        <a href="/blog" class="badge badge-secondary mr-2 mb-2 text-black"
+                            style="color:rgb(152, 29, 29)">All
+                            Tag</a>
                         @foreach ($blogtags as $blogtag)
-                            <a href="#" class="badge badge-secondary mr-2 mb-2">{{ $blogtag->tags }}</a>
+                            <a href="/blog?tag_id={{ $blogtag->id }}"
+                                class="badge badge-secondary mr-2 mb-2 text-black"
+                                style="color:rgb(0, 0, 0)">{{ $blogtag->tags }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -216,23 +263,26 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,
+                        Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -243,7 +293,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -251,11 +301,11 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-3">Question</h4>
+                    <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
@@ -266,16 +316,17 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
+                            Developer</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>
@@ -320,24 +371,35 @@
 
     <script>
         $(document).ready(function() {
-            // Show all cards by default
-            var allCards = $('#tab-all .project-card');
-            $('#tab-basic, #tab-medium, #tab-custom').hide();
+            $('.tab-pane').hide();
+            $('#all-news').show();
 
-            // Filter function
-            $('.nav-pills a').click(function() {
+            $('.nav-pills a').click(function(e) {
+                e.preventDefault();
                 var target = $(this).attr('href');
-                if (target == '#tab-all') {
-                    $('#tab-all').show();
-                    allCards.show();
-                    $('#tab-basic, #tab-medium, #tab-custom').hide();
+
+                $('.tab-pane').hide();
+                $(target).show();
+
+                if (target == '#all-news') {
+                    $('.card').show();
                 } else {
-                    $('#tab-all').hide();
-                    $(target).show().siblings('.tab-pane').hide();
+                    var selectedCategory = target.substring(1); // Mengambil nama kategori dari ID tab
+                    $('.card').each(function() {
+                        var cardCategory = $(this).data('category').toLowerCase();
+                        if (cardCategory === selectedCategory) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
                 }
             });
         });
     </script>
+
+
+
     <script>
         function showCategory(category) {
             document.getElementById('website').style.display = (category === 'website') ? 'block' : 'none';

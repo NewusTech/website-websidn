@@ -76,6 +76,10 @@
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Card</span>
                 </a>
+                <a class="nav-link" href="{{ url('admin/carth') }}">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Carth</span>
+                </a>
                 <a class="nav-link" href="{{ url('admin/text') }}">
                     <i class="fas fa-fw fa-font"></i>
                     <span>Text</span>

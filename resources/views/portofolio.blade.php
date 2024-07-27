@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Websidn - Website Murah di Lampung </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency</title>
+    <meta name="keywords"
+        content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
+    <meta name="description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon">
@@ -75,75 +78,155 @@
     </nav>
     <!-- Navbar End -->
 
-    <!-- Categories Start -->
-    <div class="container-fluid p-4">
+    <!-- Service Start -->
+    <div class="container-fluid" style="background: #280F91;">
         <div class="container-fluid">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Our Happy</h6>
-                <h1 class="mb-5">Portofolio</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        @foreach ($portowebsite as $portofolioweb)
-                            <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                                <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid" src="{{ Storage::disk('s3')->url($portofolioweb->image) }}"
-                                        alt="">
-                                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                        style="margin: 1px;">
-                                        <h5 class="m-0">{{ $portofolioweb->judul }}</h5>
-                                        <small class="text-primary">{{ $portofolioweb->detail }}</small>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                        @foreach ($portomobile as $portofoliomob)
-                            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                                <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid" src="{{ Storage::disk('s3')->url($portofoliomob->image) }}"
-                                        alt="">
-                                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                        style="margin: 1px;">
-                                        <h5 class="m-0">{{ $portofoliomob->judul }}</h5>
-                                        <small class="text-primary">{{ $portofoliomob->detail }}</small>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                        @foreach ($portodigital as $portofoliodigi)
-                            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                                <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid"
-                                        src="{{ Storage::disk('s3')->url($portofoliodigi->image) }}" alt="">
-                                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                        style="margin: 1px;">
-                                        <h5 class="m-0">{{ $portofoliodigi->judul }}</h5>
-                                        <small class="text-primary">{{ $portofoliodigi->detail }}</small>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
+            <h2 class="mb-4 text-center text-warning pt-4">Portofolio</h2>
+            <div class="row justify-content-start">
+                <div class="col-12 mb-4">
+                    <div class="row">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="text-warning nav-link active" href="#" data-filter="all">All</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="website">Website</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="digital">Digital</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-warning nav-link" href="#" data-filter="uiux">UI/UX</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                @foreach ($portouiux as $portofolioui)
-                    <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                        <a class="position-relative d-block h-100 overflow-hidden" href="">
-                            <img class="img-fluid position-absolute w-100 h-100"
-                                src="{{ Storage::disk('s3')->url($portofolioui->image) }}" alt=""
-                                style="object-fit: cover;">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                style="margin:  1px;">
-                                <h5 class="m-0">{{ $portofolioui->judul }}</h5>
-                                <small class="text-primary">{{ $portofolioui->detail }}</small>
-                            </div>
-                        </a>
+            </div>
+        </div>
+        <div class="row">
+            @foreach ($portowebsite as $portofolioweb)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="website">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofolioweb->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofolioweb->judul }}</h5>
+                            <p class="card-text">{{ $portofolioweb->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofolioweb->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
+            @foreach ($portomobile as $portofoliomob)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="digital">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofoliomob->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofoliomob->judul }}</h5>
+                            <p class="card-text">{{ $portofoliomob->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofoliomob->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($portodigital as $portofoliodigi)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="digital">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofoliodigi->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofoliodigi->judul }}</h5>
+                            <p class="card-text">{{ $portofoliodigi->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofoliodigi->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($portouiux as $portofolioui)
+                <div class="col-12 col-sm-6 col-md-3 mb-4 portfolio-item" data-category="uiux">
+                    <div class="card bg-dark border-light text-white bg-image hover-zoom h-100"
+                        style="border-radius: 15px;">
+                        <img class="card-img-top h-100" src="{{ Storage::disk('s3')->url($portofolioui->image) }}"
+                            alt="Project Image"
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $portofolioui->judul }}</h5>
+                            <p class="card-text">{{ $portofolioui->detail }}</p>
+                            <p class="card-text mt-auto">
+                                <small class="text-muted">by websidn</small>
+                            </p>
+                            <a href="#" class="btn-sm btn-warning mt-auto" data-toggle="modal"
+                                data-target="#imageModal"
+                                data-image="{{ Storage::disk('s3')->url($portofolioui->image) }}">Lihat <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        {{-- ganti aja paginate --}}
+    </div>
+    <!-- Service End -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Preview Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Preview" class="img-fluid">
+                </div>
             </div>
         </div>
     </div>
-    <!-- Categories Start -->
+
+
+    {{-- brosur --}}
+    <div class="container-fluid event py-4" style="background-color:#f8f8f8;">
+        <div class="container">
+            <div class="text-center">
+                <small
+                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest
+                    Updates</small>
+                <h1 class="display-5 mb-3">Tersedia Brosur Catalog Portofolio Kami</h1>
+                <a href="https://drive.google.com/drive/folders/1xxAZEDpnAwcDy8lFLkbANgkLU3fmNFl8?usp=sharing"
+                    class="btn btn-danger text-white"><i class="fas fa-money-check-alt"></i> Our Portofolio</a>
+            </div>
+
+        </div>
+    </div>
+    {{-- endbrosur --}}
 
     <!-- Footer Start -->
     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -152,23 +235,26 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="https://wa.me/6287898644177">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">Terms & Condition</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Salim Batubara No.118, Kupang Teba,
+                        Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 888-991-2992</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>websidn@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ route('about') }}"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -179,7 +265,7 @@
                         <div class="col-12">
                             <!-- Ganti dengan iframe Google Maps atau OpenStreetMap -->
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.546249324146!2d-122.0321821846563!3d37.331732234155654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580b8bde3f49b%3A0x90b91f31e8b108e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628190311926!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.4788230126894!2d105.2724827!3d-5.4426778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbff9e63c95f%3A0x6bd3c394975d3800!2sCV%20NEWUS%20TEKNOLOGI%20%7C%20Software%20Development%20%7C%20Integrated%20Solutions%20%7C%20Enterprise%20Solutions%20%7C%20Financial%20Management!5e0!3m2!1sen!2sid!4v1721876044093!5m2!1sen!2sid"
                                 width="100%" height="120" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -187,11 +273,11 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-3">Question</h4>
+                    <p>Tuliskan pesan ke perusahaan disini</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                            placeholder=" jasa website lampung">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
@@ -202,16 +288,17 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        &copy; <a class="border-bottom" href="#">Websidn</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://websidn.com">Websidn
+                            Developer</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://websidn.com">Websidn</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('about') }}">Cookies</a>
+                            <a href="{{ route('about') }}">Help</a>
+                            <a href="{{ route('about') }}">FQAs</a>
                         </div>
                     </div>
                 </div>
@@ -250,22 +337,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // Show all cards by default
-            var allCards = $('#tab-all .project-card');
-            $('#tab-basic, #tab-medium, #tab-custom').hide();
+        document.addEventListener('DOMContentLoaded', function() {
+            var filterLinks = document.querySelectorAll('.nav-tabs .nav-link');
+            var portfolioItems = document.querySelectorAll('.portfolio-item');
 
-            // Filter function
-            $('.nav-pills a').click(function() {
-                var target = $(this).attr('href');
-                if (target == '#tab-all') {
-                    $('#tab-all').show();
-                    allCards.show();
-                    $('#tab-basic, #tab-medium, #tab-custom').hide();
-                } else {
-                    $('#tab-all').hide();
-                    $(target).show().siblings('.tab-pane').hide();
-                }
+            filterLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    filterLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+
+                    link.classList.add('active');
+
+                    var filter = link.getAttribute('data-filter');
+
+                    portfolioItems.forEach(function(item) {
+                        if (filter === 'all' || item.getAttribute('data-category') ===
+                            filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            var modal = document.getElementById('imageModal');
+            var modalImage = document.getElementById('modalImage');
+
+            $('#imageModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var imageUrl = button.data('image'); // Extract info from data-* attributes
+                modalImage.src = imageUrl;
+            });
+
+            $('#imageModal').on('hidden.bs.modal', function() {
+                modalImage.src = '';
             });
         });
     </script>

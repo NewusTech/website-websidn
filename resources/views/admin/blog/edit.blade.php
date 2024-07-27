@@ -64,7 +64,7 @@
                 <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Enter deskripsi">{{ $blog->deskripsi }}</textarea>
             </div> --}}
             <div class="form-group">
-                <textarea id="deskripsi" name="deskripsi" placeholder="Enter deskripsi">{{ $blog->deskripsi }}</textarea>
+                <textarea id="task-textarea" name="deskripsi" placeholder="Enter deskripsi">{{ $blog->deskripsi }}</textarea>
             </div>
             <div class="form-group">
                 <label for="status">Status</label>
@@ -93,13 +93,13 @@
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
-
     <script>
         document.getElementById('judul').addEventListener('input', function() {
             const judul = this.value.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
             document.getElementById('slug').value = judul;
         });
     </script>
+    {{-- 
     <script src="https://cdn.tiny.cloud/1/2c36jplygvhxqd0f2xatcwqncquv1qubi58fo72ooxs4jpzo/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script>
@@ -108,5 +108,78 @@
             plugins: 'code table lists',
             toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
         });
+    </script> --}}
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
+    <script type="importmap">
+        {
+            "imports": {
+                "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.js",
+                "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.1/"
+            }
+        }
     </script>
+    <script type="module">
+        import {
+            ClassicEditor,
+            Essentials,
+            Bold,
+            Italic,
+            Font,
+            Paragraph,
+            Alignment,
+            BlockQuote,
+            Heading,
+            Image,
+            ImageToolbar,
+            ImageCaption,
+            ImageStyle,
+            ImageResize,
+            Link,
+            List,
+            Table,
+            TableToolbar
+        } from 'ckeditor5';
+
+        ClassicEditor
+            .create(document.querySelector('#task-textarea'), {
+                plugins: [
+                    Essentials, Bold, Italic, Font, Paragraph,
+                    Alignment, BlockQuote, Heading, Image, ImageToolbar,
+                    ImageCaption, ImageStyle, ImageResize, Link, List,
+                    Table, TableToolbar
+                ],
+                toolbar: {
+                    items: [
+                        'undo', 'redo', '|',
+                        'bold', 'italic', '|',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
+                        'alignment', '|',
+                        'blockQuote', 'heading', '|',
+                        'link', 'bulletedList', 'numberedList', '|',
+                        'insertTable', '|',
+                        'imageUpload'
+                    ]
+                },
+                image: {
+                    toolbar: [
+                        'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', '|',
+                        'imageTextAlternative'
+                    ]
+                },
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells'
+                    ]
+                }
+            })
+            .then(editor => {
+                console.log('Editor was initialized', editor);
+            })
+            .catch(error => {
+                console.error(error.stack);
+            });
+    </script>
+
+
+
 @endsection

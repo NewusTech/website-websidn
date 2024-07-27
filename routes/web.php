@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\TextController;
 use App\Http\Controllers\Admin\CoroselController;
 use App\Http\Controllers\Admin\CardController;
+use App\Http\Controllers\Admin\CarthController;
 use App\Http\Controllers\Admin\TestimoniController;
 use App\Http\Controllers\Admin\PriceController;
 use App\Http\Controllers\Admin\GaleriController;
@@ -27,23 +29,25 @@ use App\Http\Controllers\Admin\Blogger\BlogtagController;
 use App\Http\Controllers\Admin\Blogger\BlogconsoleController;
 use Illuminate\Support\Facades\Route;
 
-route::get('/', [FrontController::class, 'LogoShow'])->name('home');
-route::get('/layanan', [FrontController::class, 'ServiceShow'])->name('layanan');
-route::get('/portofolio', [FrontController::class, 'PortfolioShow'])->name('portofolio');
-route::get('/gallery', [FrontController::class, 'GalleryShow'])->name('gallery');
-route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
-route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
-route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
-route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
-Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
-// Route::get('/', function () {
-//     return view('welcome');
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
+Route::get('/', [FrontController::class, 'LogoShow'])->name('home');
+Route::get('/layanan', [FrontController::class, 'ServiceShow'])->name('layanan');
+Route::get('/portofolio', [FrontController::class, 'PortfolioShow'])->name('portofolio');
+Route::get('/gallery', [FrontController::class, 'GalleryShow'])->name('gallery');
+Route::get('/blog', [FrontController::class, 'BlogShow'])->name('blog');
+Route::get('/blogcontent', [FrontController::class, 'BlogContent'])->name('blogcontent');
+Route::get('/about', [FrontController::class, 'AboutShow'])->name('about');
+Route::get('/contact', [FrontController::class, 'ContactShow'])->name('contact');
+// Route::get('/{slug}', function ($slug) {
+//     return redirect()->route('blog.detail', ['slug' => $slug]);
 // });
+Route::get('/blog/{slug}', [FrontController::class, 'BlogDetail'])->name('blog.detail');
 
 Route::controller(LoginController::class)->group(function () {
-    route::get('/login','LoginForm')->name('login');  // No middleware here
-    route::post('/login','login');
-    route::post('/logout','logout');
+    Route::get('/login','LoginForm')->name('login'); 
+    Route::post('/login','login');
+    Route::post('/logout','logout');
   });
 
 Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(function(){
@@ -79,6 +83,14 @@ Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(
         Route::put('/card/{id}', [CardController::class, 'CardUpdate'])->name('card.update');
         Route::get('/card/{id}', [CardController::class, 'CardView'])->name('card.view');
         Route::delete('/card/{id}', [CardController::class, 'CardDelete'])->name('card.delete');
+
+        Route::get('/carth', [CarthController::class, 'CarthIndex'])->name('carth.index');
+        Route::get('/carth/create', [CarthController::class, 'CarthCreate'])->name('carth.create');
+        Route::post('/carth', [CarthController::class, 'CarthStore'])->name('carth.store');
+        Route::get('/carth/{id}/edit', [CarthController::class, 'CarthEdit'])->name('carth.edit');
+        Route::put('/carth/{id}', [CarthController::class, 'CarthUpdate'])->name('carth.update');
+        Route::get('/carth/{id}', [CarthController::class, 'CarthView'])->name('carth.view');
+        Route::delete('/carth/{id}', [CarthController::class, 'CarthDelete'])->name('carth.delete');
         
         // TestimoniController routes
         Route::get('/testimoni', [TestimoniController::class, 'TestimoniIndex'])->name('testimoni.index');
@@ -179,4 +191,6 @@ Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(
         Route::get('/about/{id}', [AboutController::class, 'AboutView'])->name('about.view');
         Route::delete('/about/{id}', [AboutController::class, 'AboutDelete'])->name('about.delete');
     });
+
+    
 });

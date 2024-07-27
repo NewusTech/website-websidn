@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     public function Blogindex()
     {
-        $blogs = Blogs::with('tags')->get();
+        $blogs = Blogs::with('tags')->latest()->paginate(5);
         return view('admin.blog.index', compact('blogs'));
     }
 

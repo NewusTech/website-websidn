@@ -8,6 +8,7 @@ use App\Models\Images;
 use App\Models\Corosels;
 use App\Models\Texts;
 use App\Models\Cards;
+use App\Models\Carths;
 use App\Models\Prices;
 use App\Models\Galeris;
 use App\Models\Testimonis;
@@ -33,13 +34,11 @@ class FrontController extends Controller
         $price = Prices::all()->take(4);
         $gallery = Galeris::with(['images','texts'])->take(4)->get();
 
-        $kategori = $request->query('kategori', 'Pegawai'); // Default 'Pegawai'
-        $query = Cards::where('kategori', $kategori);
-        $alltema = $query->paginate(6); // Per page limit
+        $alltema = Carths::paginate(6);
 
-        $basic = Cards::all()->where('judul', 'Basic')->take(6);
-        $medium = Cards::all()->where('judul', 'Medium')->take(6);
-        $custom = Cards::all()->where('judul', 'Custom')->take(6);
+        $basic = Carths::all()->where('kategori', 'basic')->take(6);
+        $medium = Carths::all()->where('kategori', 'medium')->take(6);
+        $custom = Carths::all()->where('kategori', 'custom')->take(6);
 
         $porto = Cards::all()->where('kategori', 'Portofolio')->take(1);
         $portowebsite = Cards::all()->where('judul', 'Website')->take(4);
@@ -77,17 +76,15 @@ class FrontController extends Controller
             'blogkategori'
         ));
     }
-    public function ServiceShow(Request $request)
-    
-        {   
-        $service = Cards::all()->where('kategori', 'Layanan')->take(4);
-        $kategori = $request->query('kategori', 'Pegawai'); // Default 'Pegawai'
-        $query = Cards::where('kategori', $kategori);
-        $alltema = $query->paginate(6); // Per page limit
 
-        $basic = Cards::all()->where('judul', 'Basic')->take(6);
-        $medium = Cards::all()->where('judul', 'Medium')->take(6);
-        $custom = Cards::all()->where('judul', 'Custom')->take(6);
+    public function ServiceShow(Request $request)
+    {   
+        $service = Cards::all()->where('kategori', 'Layanan')->take(4);
+        $alltema = Carths::paginate(6);
+
+        $basic = Carths::all()->where('kategori', 'basic')->take(6);
+        $medium = Carths::all()->where('kategori', 'medium')->take(6);
+        $custom = Carths::all()->where('kategori', 'custom')->take(6);
             return view('service', compact(
             'alltema',
             'basic',
@@ -95,10 +92,10 @@ class FrontController extends Controller
             'custom',
             'service',
             ));
-        }
-        public function PortfolioShow()
-    
-        {   
+    }
+
+    public function PortfolioShow()
+    {   
         $porto = Cards::all()->where('kategori', 'Portofolio')->take(1);
         $portowebsite = Cards::all()->where('judul', 'Website')->take(4);
         $portomobile = Cards::all()->where('judul', 'Mobile')->take(4);
@@ -111,58 +108,79 @@ class FrontController extends Controller
             'portodigital',
             'portouiux',
             ));
-        }
-        public function GalleryShow()
-        
-        {   
+    }
+    public function GalleryShow()
+    {   
         $gallery = Galeris::all();
             return view('gallery', compact(
             'gallery',
             
         ));
-        }
-        public function BlogShow()
-    
-        {   
-            $blog = Blogs::all();
+    }
+    public function BlogShow(Request $request)
+    {   
+            $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
+            $tagId = $request->input('tag_id');
+
+                if ($tagId) {
+                    $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
+                        $query->where('blogtags.id', $tagId);
+                    })->with(['kategoris', 'tags'])->paginate(10);
+                } else {
+                    $blog = Blogs::with(['kategoris', 'tags'])->latest()->paginate(10);
+                }
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
+            $blogabove = Blogs::all()->take(3);
             return view('blog', compact(
                 'blog',
+                'blogabove',
                 'blogkategori',
                 'blogtags',
+                'logo',
             ));
             }
-        public function AboutShow()
-    
-        {   
+
+    public function AboutShow()
+    {   
             $about = Abouts::all();
             return view('about', compact(
   
                 'about',
             ));
-        }
-        public function ContactShow()
-    
-        {   
+    }
+    public function ContactShow()
+    {   
             return view('contact');
-        }
-        public function BlogContent()
-    
-        {   
+    }
+    public function BlogContent()
+    {   
             return view('blogcontent');
-        }
-        public function BlogDetail($slug)
-        {
+    }
+    public function BlogDetail(Request $request, $slug)
+    {
+            $logo= Homes::with(['images','texts'])->where('kategori', 'logo')->take(1)->get();
             $blog = Blogs::all();
+            $tagId = $request->input('tag_id');
+
+                if ($tagId) {
+                    $blog = Blogs::whereHas('tags', function ($query) use ($tagId) {
+                        $query->where('blogtags.id', $tagId);
+                    })->with(['kategoris', 'tags'])->paginate(8);
+                } else {
+                    $blog = Blogs::with(['kategoris', 'tags'])->paginate(8);
+                }
+            $blogabove = Blogs::all()->take(3);
             $blogkategori = Blogkategoris::all();
             $blogtags = Blogtags::all();
             $blogdetail = Blogs::where('slug', $slug)->firstOrFail();
             return view('blogvalue', compact(
                 'blogdetail',
                 'blog',
+                'blogabove',
                 'blogkategori',
                 'blogtags',
+                'logo',
             ));
-        }
+    }
 }
