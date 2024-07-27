@@ -50,8 +50,6 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('/logout','logout');
   });
 
-  
-
 Route::prefix("admin")->namespace("Admin")->middleware(["auth","admin"])->group(function(){
     Route::prefix('')->group(function () {
         Route::get('/image', [ImageController::class, 'ImageIndex'])->name('image.index');

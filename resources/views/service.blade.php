@@ -10,6 +10,13 @@
     <meta name="description"
         content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency" />
+    <meta property="og:description"
+        content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda." />
+    <meta property="og:image" content="{{ Storage::disk('s3')->url($layanan->image) }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
 
     <!-- Favicon -->
     <link href="img/websidn.png" rel="icon">
