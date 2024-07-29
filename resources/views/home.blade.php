@@ -9,6 +9,7 @@
         content="jasa pembuatan website Lampung, digital agency Lampung, desain web profesional, solusi digital Lampung, pembuatan website murah">
     <meta name="description"
         content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
+    <meta name="google-site-verification" content="4ZiY6yGYNy7WoOfWQ0CoVmEYkqSawk2tsM7wxQZfB-U" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Jasa Pembuatan Website Terbaik di Lampung | Websidn Digital Agency" />
@@ -210,7 +211,6 @@
                     </ul>
                 </div>
 
-
                 <div class="tab-content">
                     <div id="tab-all" class="tab-pane fade show active p-0">
                         <div class="row g-4">
@@ -354,11 +354,6 @@
     </div>
     <br>
 
-
-
-
-
-
     <!-- Service Start -->
     <div class="container-fluid" style="background: #280F91;">
         <div class="container-fluid p-5">
@@ -469,7 +464,6 @@
             <div id="mobile" class="row" style="display: none;">
                 <h1 class="text-white">Mobile</h1>
                 <div class="d-none gap-2 d-lg-flex">
-
                     <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
                         <div class="card text-center">
                             <div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
@@ -954,7 +948,6 @@
     </div>
     <!-- Testimonial End -->
 
-
     {{-- faq start --}}
     <div class="container mt-5">
         <h2 class="faq-title text-center mb-4">Frequently Asked Questions</h2>
@@ -1173,7 +1166,6 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
         style="position: fixed; bottom: 20px; right: 20px;">
@@ -1193,7 +1185,6 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
