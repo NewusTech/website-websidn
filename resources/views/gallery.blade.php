@@ -10,7 +10,7 @@
     <meta name="description"
         content="Websidn Digital Agency menawarkan jasa pembuatan website terbaik di Lampung. Kami menyediakan solusi digital lengkap dengan harga kompetitif. Hubungi kami untuk konsultasi gratis dan solusi web yang sesuai kebutuhan bisnis Anda.">
 
-
+    <meta name="google-site-verification" content="4ZiY6yGYNy7WoOfWQ0CoVmEYkqSawk2tsM7wxQZfB-U" />
 
 
     <!-- Favicon -->
